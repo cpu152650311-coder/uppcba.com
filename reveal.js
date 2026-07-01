@@ -40,7 +40,32 @@
   }
 
   /* ------------------------------------------------------------
-     3. MODAL — [data-modal-open] opens, .modal-close + overlay click close
+     3. NAV DROPDOWN — click toggle, close on outside click
+     ------------------------------------------------------------ */
+  qsa('.nav-dropdown-toggle').forEach(function (toggle) {
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      var dropdown = this.closest('.nav-dropdown');
+      if (!dropdown) return;
+      // Close other open dropdowns first
+      qsa('.nav-dropdown.open').forEach(function (d) {
+        if (d !== dropdown) d.classList.remove('open');
+      });
+      dropdown.classList.toggle('open');
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      qsa('.nav-dropdown.open').forEach(function (d) {
+        d.classList.remove('open');
+      });
+    }
+  });
+
+  /* ------------------------------------------------------------
+     4. MODAL — [data-modal-open] opens, .modal-close + overlay click close
      ------------------------------------------------------------ */
   var modalOverlay = qs('.modal-overlay');
 

@@ -499,6 +499,68 @@ code, pre, kbd, samp {
   transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
+/* Nav dropdown — click toggle, no hover gap */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.nav-dropdown-toggle::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  margin-top: 1px;
+  transition: transform var(--transition-fast);
+}
+
+.nav-dropdown.open .nav-dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -0.75rem;
+  min-width: 200px;
+  background: var(--surface-white);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-nav);
+  padding: var(--sp-1) 0;
+  z-index: 100;
+}
+
+.nav-dropdown.open .nav-dropdown-menu,
+.nav-dropdown-menu:hover {
+  display: block;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.6rem 1.25rem;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.nav-dropdown-menu a:hover {
+  background: var(--surface-gray);
+  color: var(--copper);
+}
+
 /* Mobile nav */
 @media (max-width: 768px) {
   .nav-links {
@@ -607,9 +669,30 @@ code, pre, kbd, samp {
   margin-top: var(--sp-4);
 }
 
-/* Hero XL (landing hero) */
+/* Hero XL (landing hero) — centered layout for homepage */
+.hero-xl .hero-inner-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hero-xl .hero-inner-content h1 {
   font-size: var(--text-hero-xl);
+  margin-inline: auto;
+  max-width: 900px;
+}
+
+.hero-xl .hero-inner-content .hero-subtitle {
+  margin-inline: auto;
+}
+
+.hero-xl .hero-inner-content .hero-actions {
+  justify-content: center;
+}
+
+.hero-xl .hero-certs {
+  justify-content: center;
 }
 
 
