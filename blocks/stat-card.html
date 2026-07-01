@@ -1,0 +1,23 @@
+<!-- FILE: blocks/stat-card.html -->
+<!-- Variant: standard (default) -->
+<div class="stat-card">
+  <div class="stat-value">{{stat_value}}</div>
+  <div class="stat-label">{{stat_label}}</div>
+</div>
+
+<!-- Variant: large (override value size) -->
+<div class="stat-card" style="padding:var(--sp-5);">
+  <div class="stat-value" style="font-size:var(--text-h2);">{{stat_value_large}}</div>
+  <div class="stat-label" style="font-size:var(--text-base);">{{stat_label_large}}</div>
+</div>
+
+<!-- Variant: small (inline/pill style) -->
+<div class="stat-card" style="padding:var(--sp-2);display:inline-flex;align-items:center;gap:var(--sp-1);">
+  <span class="stat-value" style="font-size:var(--text-h6);">{{stat_value_small}}</span>
+  <span class="stat-label" style="margin-top:0;font-size:var(--text-xs);">{{stat_label_small}}</span>
+</div>
+
+
+<!-- ============================================================
+     B08: process-step — Timeline item with copper circle marker
+     ============================================================ -->

@@ -1,0 +1,30 @@
+<!-- FILE: blocks/inquiry-form-compact.html -->
+<form method="POST" novalidate class="card" aria-label="Quick inquiry form" style="padding:var(--sp-4);">
+  <div class="form-group">
+    <label class="form-label" for="cq-name">{{form_label_name}} <span style="color:var(--error);">*</span></label>
+    <input class="form-input" type="text" id="cq-name" name="name" required placeholder="{{form_placeholder_name}}">
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="cq-email">{{form_label_email}} <span style="color:var(--error);">*</span></label>
+    <input class="form-input" type="email" id="cq-email" name="email" required placeholder="{{form_placeholder_email}}">
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="cq-service">{{form_label_service}}</label>
+    <select class="form-select" id="cq-service" name="service">
+      <option value="">{{form_option_default}}</option>
+      <option value="smt">{{form_option_smt}}</option>
+      <option value="dip">{{form_option_dip}}</option>
+      <option value="mixed">{{form_option_mixed}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="cq-message">{{form_label_message}} <span style="color:var(--error);">*</span></label>
+    <textarea class="form-textarea" id="cq-message" name="message" required placeholder="{{form_placeholder_message}}"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary" style="width:100%;">{{form_submit_label}}</button>
+</form>
+
+
+<!-- ============================================================
+     B11: contact-info-card — Info card with copper icon, label, value
+     ============================================================ -->

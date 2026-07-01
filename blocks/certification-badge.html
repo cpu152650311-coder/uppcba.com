@@ -1,0 +1,30 @@
+<!-- FILE: blocks/certification-badge.html -->
+<!-- Variant A: inline (icon + label, for trust strips and hero rows) -->
+<div class="cert-badge">
+  <!-- IMG:img-cert-icon -->
+  <img src="/generated/ill-cert-shield.webp" alt="" width="20" height="20" data-img-role="content" loading="lazy" style="width:20px;height:20px;" aria-hidden="true">
+  <span>{{cert_badge_label}}</span>
+</div>
+
+<!-- Variant B: detail (icon + name + scope description) -->
+<div style="text-align:center;padding:var(--sp-4);border:1px solid var(--border-default);border-radius:var(--radius-sm);box-shadow:var(--shadow-card);background:var(--surface-white);">
+  <!-- IMG:img-cert-icon -->
+  <div style="
+    width:56px;height:56px;margin-inline:auto;margin-bottom:var(--sp-3);
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(200,127,46,0.08);
+    border-radius:var(--radius-pill);
+  ">
+    <img src="/generated/ill-cert-shield.webp" alt="" width="32" height="32" data-img-role="content" loading="lazy">
+  </div>
+
+  <h6 style="margin-bottom:var(--sp-1);">{{cert_detail_name}}</h6>
+  <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--lh-relaxed);">
+    {{cert_detail_scope}}
+  </p>
+</div>
+
+
+<!-- ============================================================
+     B16: equipment-card — Equipment display with abstract illustration
+     ============================================================ -->

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPC Standards Explained: What Class 2 vs Class 3 Means for Your Product — Uppcba Blog</title>
+  <meta name="description" content="Understand IPC Class 2 vs Class 3 electronic assembly standards. Compare acceptance criteria, inspection requirements, and cost implications for PCB manufacturing.">
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style>
+    /* ============================================================
+       PAGE-SPECIFIC STYLES — blog/post-2.html only
+       Never redefines global classes from design-tokens.css
+       ============================================================ */
+
+    .article-cat-badge {
+      display: inline-block;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-eyebrow);
+      color: var(--copper);
+      margin-bottom: var(--sp-2);
+    }
+
+    .related-heading {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: var(--text-h4);
+      color: var(--text-primary);
+      margin-bottom: var(--sp-4);
+    }
+
+    .card-img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-cat-pill {
+      position: absolute;
+      top: var(--sp-2);
+      left: var(--sp-2);
+      display: inline-block;
+      padding: 0.25em 0.65em;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      background: var(--copper);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-label);
+    }
+
+    .card-date {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      margin-bottom: var(--sp-1);
+    }
+
+    .card-excerpt {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--sp-2);
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--copper);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .card-link:hover {
+      color: var(--copper-hover);
+    }
+
+    .article-illustration {
+      border-radius: var(--radius-sm);
+      margin-block: var(--sp-5);
+      border: 1px solid var(--border-default);
+    }
+
+    .cta-secondary-link-post {
+      display: inline-flex;
+      align-items: center;
+      color: var(--text-on-dark);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: rgba(232,236,242,0.4);
+      transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+    }
+
+    .cta-secondary-link-post:hover {
+      color: var(--copper-hover);
+      text-decoration-color: var(--copper-hover);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Uppcba home">
+        <span class="nav-logo-text">Uppcba</span>
+      </a>
+      <div class="nav-links" id="mainNavLinks">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="../products.html" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/smt.html">SMT Assembly</a>
+            <a href="../products/dip.html">DIP Assembly</a>
+            <a href="../products/mixed.html">Mixed Assembly</a>
+          </div>
+        </div>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <a href="#inquiry-modal" class="btn nav-cta" data-modal-open="#inquiry-modal">Get Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         ARTICLE HERO
+         ============================================================ -->
+    <header class="article-hero">
+      <div class="container" style="max-width:780px;">
+        <span class="article-category">Quality Standards</span>
+        <h1>IPC Standards Explained: What Class 2 vs Class 3 Means for Your Product</h1>
+        <div class="article-meta">
+          June 8, 2026 &middot; 7 min read
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         ARTICLE BODY
+         ============================================================ -->
+    <div class="article-body">
+
+      <h2>IPC Classification: A Brief Overview</h2>
+
+      <p>
+        IPC (Association Connecting Electronics Industries) publishes the standards that define what "acceptable"
+        means in electronics manufacturing. The most widely referenced is IPC-A-610, "Acceptability of Electronic
+        Assemblies," which categorizes every solder joint, every plated through-hole barrel, every component placement
+        into one of three classes. Choosing the right class for your product is one of the earliest and most
+        consequential decisions you make in the product development cycle — because it determines the inspection
+        criteria your assembler applies, the rework thresholds that stop a board from shipping, and ultimately the
+        cost of every unit produced.
+      </p>
+
+      <p>
+        The three classes are:
+      </p>
+      <ul>
+        <li><strong>Class 1 — General Electronic Products:</strong> Consumer goods where the primary requirement is function. Cosmetic defects are acceptable. If it powers on and works, it ships. Think toys, remote controls, disposable electronics.</li>
+        <li><strong>Class 2 — Dedicated Service Electronic Products:</strong> Products where extended life and uninterrupted service are desired but not critical. This is the default for most industrial, commercial, and high-end consumer electronics.</li>
+        <li><strong>Class 3 — High Performance / Harsh Environment Electronic Products:</strong> Equipment where failure cannot be tolerated — aerospace, medical devices, military systems, automotive safety. Downtime or malfunction can cost lives.</li>
+      </ul>
+
+      <h2>Class 2: Dedicated Service Electronics</h2>
+
+      <p>
+        Class 2 is the workhorse classification for most products entering an assembly line. The governing principle
+        is that the product must deliver reliable performance throughout its intended service life, but occasional
+        interruptions are acceptable. Solder joints may show some non-functional imperfection — a slightly reduced
+        toe fillet, a minor amount of dewetting (up to 5% of the joint surface) — as long as the electrical and
+        mechanical integrity is maintained.
+      </p>
+
+      <p>
+        For through-hole barrels, Class 2 requires a minimum 50% vertical fill with solder. The annular ring — the
+        copper pad surrounding a plated hole — may break out by up to 90 degrees (one-quarter of the pad circumference)
+        provided the minimum lateral spacing to adjacent conductors is maintained. Solder joint voids visible on X-ray
+        are acceptable up to 25% of the joint volume. These tolerances accommodate the natural variability of
+        high-volume production without compromising function for the vast majority of applications.
+      </p>
+
+      <h2>Class 3: High Performance Electronics</h2>
+
+      <p>
+        Class 3 is a fundamentally different requirement profile. Every solder joint is inspected as though a life
+        depends on it — because in many applications, it does. Through-hole barrel fill must reach 75% minimum vertical
+        fill. The annular ring must show a full 180 degrees of unbroken copper surrounding the hole — no breakout
+        permitted unless specifically documented and approved by the customer. Solder joint voids are capped at 15% of
+        total joint volume. Surface cleanliness requirements are tighter, because ionic contamination that causes
+        acceptable leakage in a consumer device can cause catastrophic dendrite growth in an avionics unit operating
+        at altitude with condensation cycling.
+      </p>
+
+      <!-- IMG:img-ill-ipc-compare -->
+      <img
+        src="/generated/ill-ipc-compare.webp"
+        alt="Two PCBs side by side, one with visible inspection marks representing Class 3, one without representing Class 2, abstract comparison"
+        class="article-illustration"
+        data-img-role="content"
+        loading="lazy">
+
+      <h2>Class 2 vs Class 3: Comparison Table</h2>
+
+      <p>
+        The table below summarizes the key acceptance criteria differences between Class 2 and Class 3 per IPC-A-610.
+        These are the most commonly cited thresholds in assembly specifications.
+      </p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Criterion</th>
+            <th>Class 2</th>
+            <th>Class 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Through-Hole Barrel Fill</td>
+            <td>50% minimum vertical fill</td>
+            <td>75% minimum vertical fill</td>
+          </tr>
+          <tr>
+            <td>Solder Joint Voids</td>
+            <td>&lt; 25% of joint volume</td>
+            <td>&lt; 15% of joint volume</td>
+          </tr>
+          <tr>
+            <td>Annular Ring</td>
+            <td>90&deg; minimum (breakout allowed if spacing maintained)</td>
+            <td>180&deg; minimum (no breakout permitted without documented approval)</td>
+          </tr>
+          <tr>
+            <td>Surface Cleanliness</td>
+            <td>1.56 &micro;g/cm&sup2; NaCl equivalent max</td>
+            <td>1.56 &micro;g/cm&sup2; NaCl equivalent max; tighter post-wash verification required</td>
+          </tr>
+          <tr>
+            <td>Dewetting on Solder Joint</td>
+            <td>Up to 5% of joint surface</td>
+            <td>Not permitted; joints must exhibit complete wetting</td>
+          </tr>
+          <tr>
+            <td>Solder Bridging (unintended)</td>
+            <td>Not permitted (Class 1 allows if no functional impact)</td>
+            <td>Not permitted under any circumstances</td>
+          </tr>
+          <tr>
+            <td>Inspection Sampling</td>
+            <td>Statistical sampling acceptable per AQL</td>
+            <td>100% inspection recommended; sampling only with documented justification</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>How to Choose the Right Class for Your Product</h2>
+
+      <p>
+        The decision between Class 2 and Class 3 should be driven by three factors: product lifecycle expectation,
+        reliability consequence of failure, and cost tolerance.
+      </p>
+
+      <p>
+        If your product is a consumer IoT device with a 3-year expected lifespan, where a field failure means a
+        returned unit and a refund — Class 2 is appropriate. If your product is an infusion pump controller, a
+        satellite power supply, or an automotive brake ECU where a field failure can injure someone or cause
+        astronomical recall expense — Class 3 is the only defensible choice.
+      </p>
+
+      <p>
+        The cost difference between Class 2 and Class 3 is real but often overstated. The primary drivers are
+        increased inspection time (every joint inspected vs statistical sampling), higher rework rate (more joints
+        get rejected at tighter thresholds), and more conservative process parameters. A well-optimized SMT line with
+        Class 3-capable equipment typically sees a 10% to 20% assembly cost premium over Class 2 — significant, but
+        dwarfed by the cost of a single field recall. Our engineering team can walk you through the trade-offs for
+        your specific product and recommend the classification that delivers the right balance of reliability and cost.
+      </p>
+
+      <p>
+        When in doubt, build to Class 3. You can always relax requirements later once field data supports it. You
+        cannot retroactively tighten solder joints that shipped under a looser standard.
+      </p>
+
+    </div>
+
+    <!-- ============================================================
+         RELATED POSTS
+         ============================================================ -->
+    <section class="section-gap-md" style="background:var(--surface-gray);" aria-labelledby="related-heading">
+      <div class="container">
+        <h2 class="related-heading" id="related-heading">Related Articles</h2>
+        <div class="grid-2">
+
+          <!-- Related: post-1 -->
+          <article class="blog-card">
+            <div class="card-img-wrap">
+              <img
+                src="/generated/ill-blog-thumb.webp"
+                alt="Abstract PCB trace maze pattern, copper on navy, representing design insights"
+                data-img-role="content"
+                loading="lazy">
+              <span class="card-cat-pill">Design for Manufacturing</span>
+            </div>
+            <div class="blog-card-body">
+              <p class="card-date">June 15, 2026</p>
+              <h3 class="blog-card-title">Design for Manufacturability: Preparing Your PCB for SMT Assembly</h3>
+              <p class="card-excerpt">
+                A practical guide to DFM principles every PCB designer should apply before sending a board to SMT production. Panelization, placement, stencil, and BOM best practices.
+              </p>
+              <a href="post-1.html" class="card-link">Read More &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Related: post-3 -->
+          <article class="blog-card">
+            <div class="card-img-wrap">
+              <img
+                src="/generated/ill-blog-thumb.webp"
+                alt="Abstract PCB trace maze pattern, copper on navy, representing design insights"
+                data-img-role="content"
+                loading="lazy">
+              <span class="card-cat-pill">Industry Trends</span>
+            </div>
+            <div class="blog-card-body">
+              <p class="card-date">May 28, 2026</p>
+              <h3 class="blog-card-title">The Cost of Rework: Why Quality Inspection Matters in PCB Assembly</h3>
+              <p class="card-excerpt">
+                Defects caught late cost exponentially more to fix. We break down the economics of inspection across the assembly lifecycle.
+              </p>
+              <a href="post-3.html" class="card-link">Read More &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA BANNER
+         ============================================================ -->
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band-inner">
+        <div>
+          <h2 class="cta-band-title">Not sure which IPC class fits your product?</h2>
+          <p class="cta-band-lead">Our engineers will review your application requirements and recommend the right quality standard — balancing reliability, compliance, and cost.</p>
+        </div>
+        <div class="cta-band-actions" style="align-items:center;">
+          <a href="#inquiry-modal" class="btn btn-primary" data-modal-open="#inquiry-modal">Request a Quote</a>
+          <a href="../contact.html" class="cta-secondary-link-post">Talk to Engineering</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Uppcba</h4>
+          <p>
+            Precision PCB assembly for prototype through mid-volume production.
+            ISO 9001, ISO 13485, and IPC-A-610 Class 3 certified. Every board
+            assembled, inspected, and tested under one roof — no subcontracting,
+            no excuses.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../products.html">Products</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../products/smt.html">SMT Assembly</a></li>
+            <li><a href="../products/dip.html">DIP Assembly</a></li>
+            <li><a href="../products/mixed.html">Mixed Assembly</a></li>
+            <li><a href="../products.html">Box Build</a></li>
+            <li><a href="../about.html">DFM Review</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>
+            Email: inquiry@uppcba.com<br>
+            Phone: +86 (755) 8xxx-xxxx<br><br>
+            Shenzhen, Guangdong<br>
+            China
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Uppcba. All rights reserved.</span>
+        <span>Built with precision.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       INQUIRY MODAL
+       ============================================================ -->
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close inquiry form">&times;</button>
+      <h2 class="modal-title" id="modal-title">Request a Quote</h2>
+      <div class="modal-body">
+        <form action="#" method="POST" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label>
+            <input type="text" id="inq-name" name="name" class="form-input" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-email">Email <span style="color:var(--error);">*</span></label>
+            <input type="email" id="inq-email" name="email" class="form-input" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-company">Company</label>
+            <input type="text" id="inq-company" name="company" class="form-input" placeholder="Your company name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-message">Message <span style="color:var(--error);">*</span></label>
+            <textarea id="inq-message" name="message" class="form-textarea" placeholder="Briefly describe your project, quantity, and any specific requirements..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="../reveal.js"></script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design for Manufacturability: Preparing Your PCB for SMT Assembly — Uppcba Blog</title>
+  <meta name="description" content="A practical guide to DFM principles for PCB designers preparing boards for SMT production. Learn panelization, component placement, stencil design, and BOM best practices.">
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style>
+    /* ============================================================
+       PAGE-SPECIFIC STYLES — blog/post-1.html only
+       Never redefines global classes from design-tokens.css
+       ============================================================ */
+
+    /* --- Article hero category badge --- */
+    .article-cat-badge {
+      display: inline-block;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-eyebrow);
+      color: var(--copper);
+      margin-bottom: var(--sp-2);
+    }
+
+    /* --- Related posts section --- */
+    .related-heading {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: var(--text-h4);
+      color: var(--text-primary);
+      margin-bottom: var(--sp-4);
+    }
+
+    /* --- Blog card used in related section (same pattern as listing) --- */
+    .card-img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-cat-pill {
+      position: absolute;
+      top: var(--sp-2);
+      left: var(--sp-2);
+      display: inline-block;
+      padding: 0.25em 0.65em;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      background: var(--copper);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-label);
+    }
+
+    .card-date {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      margin-bottom: var(--sp-1);
+    }
+
+    .card-excerpt {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--sp-2);
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--copper);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .card-link:hover {
+      color: var(--copper-hover);
+    }
+
+    /* --- DFM checklist table (mini spec-table style) --- */
+    .dfm-checklist {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      margin-block: var(--sp-3);
+    }
+
+    .dfm-checklist thead {
+      background: var(--navy-primary);
+      color: #fff;
+    }
+
+    .dfm-checklist th {
+      padding: var(--sp-2) var(--sp-3);
+      text-align: left;
+      font-weight: 600;
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-label);
+    }
+
+    .dfm-checklist td {
+      padding: var(--sp-2) var(--sp-3);
+      border-bottom: 1px solid var(--border-default);
+      color: var(--text-primary);
+    }
+
+    .dfm-checklist tbody tr:nth-child(even) {
+      background: var(--surface-gray);
+    }
+
+    .dfm-checklist tbody tr:hover {
+      background: rgba(200,127,46,0.04);
+    }
+
+    /* --- Article body image styling --- */
+    .article-illustration {
+      border-radius: var(--radius-sm);
+      margin-block: var(--sp-5);
+      border: 1px solid var(--border-default);
+    }
+
+    /* --- CTA secondary link --- */
+    .cta-secondary-link-post {
+      display: inline-flex;
+      align-items: center;
+      color: var(--text-on-dark);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: rgba(232,236,242,0.4);
+      transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+    }
+
+    .cta-secondary-link-post:hover {
+      color: var(--copper-hover);
+      text-decoration-color: var(--copper-hover);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Uppcba home">
+        <span class="nav-logo-text">Uppcba</span>
+      </a>
+      <div class="nav-links" id="mainNavLinks">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="../products.html" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/smt.html">SMT Assembly</a>
+            <a href="../products/dip.html">DIP Assembly</a>
+            <a href="../products/mixed.html">Mixed Assembly</a>
+          </div>
+        </div>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <a href="#inquiry-modal" class="btn nav-cta" data-modal-open="#inquiry-modal">Get Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         ARTICLE HERO
+         ============================================================ -->
+    <header class="article-hero">
+      <div class="container" style="max-width:780px;">
+        <span class="article-category">Design for Manufacturing</span>
+        <h1>Design for Manufacturability: Preparing Your PCB for SMT Assembly</h1>
+        <div class="article-meta">
+          June 15, 2026 &middot; 8 min read
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         ARTICLE BODY
+         ============================================================ -->
+    <div class="article-body">
+
+      <h2>What Is DFM and Why Does It Matter?</h2>
+
+      <p>
+        Design for Manufacturability (DFM) is the practice of designing a printed circuit board in a way that makes it
+        easy to manufacture consistently, at high yield, and at reasonable cost. A PCB layout that passes electrical DRC
+        checks can still be a manufacturing nightmare — requiring special fixtures, slowing placement speed, generating
+        excessive defects, or making inspection difficult.
+      </p>
+
+      <p>
+        The cost impact of DFM is not theoretical. A board with poor panelization that wastes 30% of the panel area adds
+        30% to the per-unit cost of every component placed, every solder joint formed, and every inspection cycle.
+        Getting DFM right early — before Gerber files are frozen — is the single highest-leverage investment a product
+        team can make in production economics.
+      </p>
+
+      <h2>Panelization: V-Score vs Tab-Routing</h2>
+
+      <p>
+        Panelization is the process of arranging multiple copies of your board on a single production panel. The panel
+        format determines how boards are handled through every machine on the line — stencil printer, pick-and-place,
+        reflow oven, and depanelization.
+      </p>
+
+      <p>
+        The two dominant methods are <strong>V-score</strong> and <strong>tab-routing</strong>. V-score cuts a V-shaped groove
+        approximately one-third of the way through the board from both sides, leaving a thin web of material that can be
+        broken cleanly after assembly. It is inexpensive and fast, but it only works for straight-line cuts across the
+        full panel — boards must be rectangular and aligned. Tab-routing uses a router to cut most of the board outline,
+        leaving small tabs (typically 1.6 mm to 2.0 mm wide) that hold the board in the panel. Tab-routing supports any
+        board shape but costs more in tooling time and requires careful tab placement at least 4 mm from any component
+        to avoid mechanical stress during depanelization.
+      </p>
+
+      <p>
+        Recommended panel size depends on your assembler's line capacity, but 250 mm by 300 mm is a widely compatible
+        standard. Leave at least 5 mm rail clearance on each long edge for conveyor transport, and place tooling holes
+        (3.2 mm diameter) in each corner of the panel rail for fixturing alignment.
+      </p>
+
+      <h2>Component Placement: Keepout Zones, Clearance, and Fiducials</h2>
+
+      <p>
+        Component placement directly affects placement speed, solder joint reliability, and inspection access. Three
+        rules deserve special attention.
+      </p>
+
+      <h3>Edge Clearance</h3>
+
+      <p>
+        Maintain a minimum 3 mm component-to-board-edge clearance. Components placed closer than 3 mm to the edge risk
+        damage during depaneling and are difficult for wave soldering fixtures to shield. For connectors with mechanical
+        insertion force, extend this to 5 mm to allow adequate fixture support.
+      </p>
+
+      <h3>Keepout Zones</h3>
+
+      <p>
+        Every fine-pitch IC needs a keepout zone around its perimeter — typically 2 mm to 3 mm — free of tall components
+        that would block the placement nozzle or inspection camera line-of-sight. Tall electrolytic capacitors,
+        transformers, and connectors should never be placed between a BGA or QFP and the nearest board edge, because
+        they shadow neighboring joints from AOI inspection lighting.
+      </p>
+
+      <h3>Fiducial Marks</h3>
+
+      <p>
+        Fiducial marks are the reference points that pick-and-place machines use to locate your board in space. Place
+        three global fiducials (one in each corner of the board outline, not the panel rail — board-level fiducials
+        compensate for panel distortion independently). For fine-pitch components (0.5 mm pitch or tighter), add two
+        local fiducials diagonally opposite each other, within 5 mm of the component body. A typical fiducial is a
+        1.0 mm diameter copper pad surrounded by a 2.0 mm solder mask clearance, with no copper pour or traces in the
+        clearance zone.
+      </p>
+
+      <!-- IMG:img-ill-dfm-abstract -->
+      <img
+        src="/generated/ill-dfm-abstract.webp"
+        alt="PCB trace routing pattern transitioning from chaotic to orderly, representing DFM optimization"
+        class="article-illustration"
+        data-img-role="content"
+        loading="lazy">
+
+      <h2>Solder Mask and Paste: Pad Design Rules</h2>
+
+      <p>
+        Solder mask clearance — the gap between the copper pad edge and the solder mask opening — should be at least
+        0.1 mm (4 mils) to account for mask registration tolerance. Tighter clearances risk mask encroachment onto the
+        pad, reducing the solderable area and weakening the joint.
+      </p>
+
+      <p>
+        Stencil thickness governs the volume of solder paste deposited. For most SMT work, a 0.1 mm (4 mil) to 0.15 mm
+        (6 mil) stainless steel laser-cut stencil is appropriate. Use 0.1 mm for fine-pitch (0.4 mm to 0.5 mm) components
+        to avoid paste bridging, and 0.15 mm for power packages or connectors that need a larger solder volume. For
+        mixed-technology boards with both fine-pitch and power components on the same side, a step stencil (varying
+        thickness across zones) can optimize paste volume selectively.
+      </p>
+
+      <h2>BOM and CPL Data: The Paper Trail That Makes or Breaks a Build</h2>
+
+      <p>
+        A complete, accurate Bill of Materials and Component Placement List is as important as the Gerber data. Every
+        line in the BOM must have a verified manufacturer part number (MPN) — not just a description. Use the
+        manufacturer's current part number, not a distributor SKU, because the latter can change when distributors
+        update their internal catalogues. Specify at least one approved alternate MPN for every part that is not a
+        generic passive (resistors, capacitors) or diode, and verify that alternates are not marked obsolete by the
+        manufacturer.
+      </p>
+
+      <p>
+        The CPL file (also called Pick-and-Place or Centroid file) must include: designator (e.g., R12, U3), X/Y
+        coordinate in millimeters from the board origin, rotation per IPC-7351 convention, and side of board (Top or
+        Bottom). The board origin — usually the lower-left corner — must match exactly between the Gerber and the CPL.
+        A mismatch of even 1 mm produces a completely unusable placement. Always specify the coordinate format (e.g.,
+        "millimeters, leading-zero-suppressed") in your documentation package.
+      </p>
+
+      <h2>DFM Checklist Summary</h2>
+
+      <p>
+        Use this checklist before releasing your design to production. Each item represents a real failure mode we have
+        observed on the line.
+      </p>
+
+      <table class="dfm-checklist">
+        <thead>
+          <tr>
+            <th>DFM Rule</th>
+            <th>Recommendation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Panel size</td>
+            <td>250 mm &times; 300 mm standard; leave 5 mm rail clearance each long edge</td>
+          </tr>
+          <tr>
+            <td>Edge clearance</td>
+            <td>3 mm minimum component-to-edge; 5 mm for connectors</td>
+          </tr>
+          <tr>
+            <td>Fiducials</td>
+            <td>3 global per board; 2 local per fine-pitch IC (within 5 mm of body)</td>
+          </tr>
+          <tr>
+            <td>Solder mask clearance</td>
+            <td>0.1 mm (4 mils) minimum from pad edge to mask opening</td>
+          </tr>
+          <tr>
+            <td>Stencil thickness</td>
+            <td>0.1 mm for fine-pitch; 0.15 mm for power; step stencil for mixed</td>
+          </tr>
+          <tr>
+            <td>BOM MPN</td>
+            <td>Verified manufacturer part number; at least one approved alternate per critical part</td>
+          </tr>
+          <tr>
+            <td>CPL coordinates</td>
+            <td>Millimeters; origin matches Gerber; include designator, X, Y, rotation, side</td>
+          </tr>
+          <tr>
+            <td>Keepout zones</td>
+            <td>2-3 mm around fine-pitch ICs; no tall parts between IC and board edge</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Conclusion: Early DFM Review Saves Cost at Every Stage</h2>
+
+      <p>
+        The most expensive DFM problem is the one discovered after stencils are cut and reels are loaded. A thorough
+        review before Gerber release catches issues while they cost nothing to fix. At Uppcba, we provide a free DFM
+        review with every quotation — our engineers examine your Gerber files, BOM, and CPL data against the same
+        checklist we use for our own production, and we flag potential issues with specific, actionable recommendations
+        before a single tool is prepared.
+      </p>
+
+      <p>
+        Submit your design for review. The DFM feedback you receive today is the rework you will never have to pay for
+        tomorrow.
+      </p>
+
+    </div>
+
+    <!-- ============================================================
+         RELATED POSTS
+         ============================================================ -->
+    <section class="section-gap-md" style="background:var(--surface-gray);" aria-labelledby="related-heading">
+      <div class="container">
+        <h2 class="related-heading" id="related-heading">Related Articles</h2>
+        <div class="grid-2">
+
+          <!-- Related: post-2 -->
+          <article class="blog-card">
+            <div class="card-img-wrap">
+              <img
+                src="/generated/ill-blog-thumb.webp"
+                alt="Abstract PCB trace maze pattern, copper on navy, representing design insights"
+                data-img-role="content"
+                loading="lazy">
+              <span class="card-cat-pill">Quality Standards</span>
+            </div>
+            <div class="blog-card-body">
+              <p class="card-date">June 8, 2026</p>
+              <h3 class="blog-card-title">IPC Standards Explained: What Class 2 vs Class 3 Means for Your Product</h3>
+              <p class="card-excerpt">
+                Understand the inspection criteria, acceptance requirements, and cost implications of IPC Class 2 versus Class 3 classification for electronics manufacturing.
+              </p>
+              <a href="post-2.html" class="card-link">Read More &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Related: post-3 -->
+          <article class="blog-card">
+            <div class="card-img-wrap">
+              <img
+                src="/generated/ill-blog-thumb.webp"
+                alt="Abstract PCB trace maze pattern, copper on navy, representing design insights"
+                data-img-role="content"
+                loading="lazy">
+              <span class="card-cat-pill">Industry Trends</span>
+            </div>
+            <div class="blog-card-body">
+              <p class="card-date">May 28, 2026</p>
+              <h3 class="blog-card-title">The Cost of Rework: Why Quality Inspection Matters in PCB Assembly</h3>
+              <p class="card-excerpt">
+                Defects caught late cost exponentially more to fix. We break down the economics of inspection across the assembly lifecycle.
+              </p>
+              <a href="post-3.html" class="card-link">Read More &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA BANNER
+         ============================================================ -->
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band-inner">
+        <div>
+          <h2 class="cta-band-title">Ready to apply DFM principles?</h2>
+          <p class="cta-band-lead">Submit your design for a free manufacturability review. Our engineers will analyze your Gerber files, BOM, and CPL data and respond with actionable feedback.</p>
+        </div>
+        <div class="cta-band-actions" style="align-items:center;">
+          <a href="#inquiry-modal" class="btn btn-primary" data-modal-open="#inquiry-modal">Submit Your Design</a>
+          <a href="../contact.html" class="cta-secondary-link-post">Contact Engineering</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Uppcba</h4>
+          <p>
+            Precision PCB assembly for prototype through mid-volume production.
+            ISO 9001, ISO 13485, and IPC-A-610 Class 3 certified. Every board
+            assembled, inspected, and tested under one roof — no subcontracting,
+            no excuses.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../products.html">Products</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../products/smt.html">SMT Assembly</a></li>
+            <li><a href="../products/dip.html">DIP Assembly</a></li>
+            <li><a href="../products/mixed.html">Mixed Assembly</a></li>
+            <li><a href="../products.html">Box Build</a></li>
+            <li><a href="../about.html">DFM Review</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>
+            Email: inquiry@uppcba.com<br>
+            Phone: +86 (755) 8xxx-xxxx<br><br>
+            Shenzhen, Guangdong<br>
+            China
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Uppcba. All rights reserved.</span>
+        <span>Built with precision.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       INQUIRY MODAL
+       ============================================================ -->
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close inquiry form">&times;</button>
+      <h2 class="modal-title" id="modal-title">Request a Quote</h2>
+      <div class="modal-body">
+        <form action="#" method="POST" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label>
+            <input type="text" id="inq-name" name="name" class="form-input" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-email">Email <span style="color:var(--error);">*</span></label>
+            <input type="email" id="inq-email" name="email" class="form-input" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-company">Company</label>
+            <input type="text" id="inq-company" name="company" class="form-input" placeholder="Your company name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-message">Message <span style="color:var(--error);">*</span></label>
+            <textarea id="inq-message" name="message" class="form-textarea" placeholder="Briefly describe your project, quantity, and any specific requirements..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="../reveal.js"></script>
+</body>
+</html>

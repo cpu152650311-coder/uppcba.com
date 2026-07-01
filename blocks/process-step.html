@@ -1,0 +1,32 @@
+<!-- FILE: blocks/process-step.html -->
+<div class="process-timeline">
+  <!-- Individual step -->
+  <div class="process-step">
+    <!-- Copper circle marker -->
+    <div class="process-marker">{{step_number}}</div>
+    <!-- Connector line -->
+    <div class="process-connector"></div>
+    <!-- Text body -->
+    <div class="process-body">
+      <h5>{{step_title}}</h5>
+      <p>{{step_description}}</p>
+    </div>
+  </div>
+
+  <!-- Second step -->
+  <div class="process-step">
+    <div class="process-marker">{{step_number_2}}</div>
+    <div class="process-connector"></div>
+    <div class="process-body">
+      <h5>{{step_title_2}}</h5>
+      <p>{{step_description_2}}</p>
+    </div>
+  </div>
+</div>
+<!-- NOTE: Execution agents repeat .process-step for each step.
+     The last step omits the .process-connector (or it auto-hides via CSS). -->
+
+
+<!-- ============================================================
+     B09: spec-table — 2-column specification table
+     ============================================================ -->

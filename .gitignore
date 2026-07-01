@@ -1,0 +1,7 @@
+*.py
+blocks-index.txt
+image-brief.html
+failed_images.txt
+gen-site-images.py
+.DS_Store
+Thumbs.db

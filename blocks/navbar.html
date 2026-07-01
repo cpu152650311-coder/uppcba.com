@@ -1,0 +1,42 @@
+<!-- FILE: blocks/navbar.html -->
+<header class="site-nav" id="site-nav">
+  <div class="site-nav-inner">
+    <!-- Logo -->
+    <a href="/" class="nav-logo" aria-label="Uppcba home">
+      <span class="nav-logo-text">{{brand_name}}</span>
+    </a>
+
+    <!-- Navigation Links -->
+    <nav aria-label="Main navigation">
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="/" class="active">{{nav_home}}</a></li>
+        <li><a href="/about.html">{{nav_about}}</a></li>
+        <li class="nav-dropdown">
+          <a href="/products.html" aria-haspopup="true" aria-expanded="false">{{nav_products}}</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/products/smt.html">{{nav_smt}}</a></li>
+            <li><a href="/products/dip.html">{{nav_dip}}</a></li>
+            <li><a href="/products/mixed.html">{{nav_mixed}}</a></li>
+          </ul>
+        </li>
+        <li><a href="/blog.html">{{nav_blog}}</a></li>
+        <li><a href="/contact.html">{{nav_contact}}</a></li>
+      </ul>
+    </nav>
+
+    <!-- CTA Button -->
+    <a href="/contact.html" class="btn nav-cta">{{nav_cta_label}}</a>
+
+    <!-- Hamburger (mobile) -->
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+
+<!-- ============================================================
+     B02: footer — 4-column footer with bottom bar
+     ============================================================ -->

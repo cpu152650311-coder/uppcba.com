@@ -1,0 +1,506 @@
+[
+  {
+    "id": "img-hero-index",
+    "page": "index.html",
+    "module": "hero",
+    "filename": "hero-index.webp",
+    "aspect": {
+      "w": 1920,
+      "h": 1080
+    },
+    "alt": "Macro photograph of printed circuit board surface with copper traces converging at a via, cool blue LED sidelight, dark navy background",
+    "role": "content",
+    "subject": "COMPOSITION: wide establishing shot, flat even lighting, no central focal point. Extreme macro PCB surface, copper traces meeting at via, cool blue LED sidelight from top-left, warm amber reflection on copper, dark navy substrate fading to black at edges. No components visible — pure PCB geometry.",
+    "lighting": "Cool blue LED sidelight from top-left, warm amber reflection from opposite angle on copper traces, dark edges",
+    "style": "photorealistic macro photograph, 16:9 aspect, high contrast, shallow depth of field on trace junction, industrial documentation style",
+    "negative": "NO CGI, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO business cards, NO company names, NO text, NO components, NO chips, NO visible solder",
+    "quality": "high",
+    "remove_bg": false
+  },
+  {
+    "id": "img-hero-about",
+    "page": "about.html",
+    "module": "hero",
+    "filename": "hero-about.webp",
+    "aspect": {
+      "w": 1920,
+      "h": 1080
+    },
+    "alt": "SMT pick-and-place machine head in motion, nozzle tip in sharp focus above PCB pad, industrial blue lighting",
+    "role": "content",
+    "subject": "COMPOSITION: wide establishing shot, flat even lighting, no central focal point. Close-up of automated SMT pick-and-place machine head in motion, nozzle tip in sharp focus just above PCB pad, motion blur on arm suggesting speed. Cool blue ambient light in machine housing, small warm indicator LEDs visible.",
+    "lighting": "Cool blue ambient machine lighting, small warm amber indicator LEDs, dark housing background",
+    "style": "photorealistic macro photograph, industrial photojournalistic style, shallow depth of field, 16:9 aspect",
+    "negative": "NO CGI, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO company names, NO text, NO faces, NO operators",
+    "quality": "high",
+    "remove_bg": false
+  },
+  {
+    "id": "img-hero-contact",
+    "page": "contact.html",
+    "module": "hero",
+    "filename": "hero-contact.webp",
+    "aspect": {
+      "w": 1920,
+      "h": 1080
+    },
+    "alt": "Fiber-optic inspection probe examining BGA solder joint, cool white-blue light, copper specular highlight",
+    "role": "content",
+    "subject": "COMPOSITION: wide establishing shot, flat even lighting, no central focal point. Macro photograph of fiber-optic inspection probe examining BGA solder joint, fiber tip emitting cool white-blue light onto PCB surface. Solder ball reflects light with warm copper specular highlight. Extreme close-up, dark background.",
+    "lighting": "Cool white-blue fiber-optic light on PCB surface, warm copper specular highlight on solder ball, dark background",
+    "style": "photorealistic macro photograph, extreme close-up, shallow depth of field, abstract and technical, 16:9 aspect",
+    "negative": "NO CGI, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO company names, NO text",
+    "quality": "high",
+    "remove_bg": false
+  },
+  {
+    "id": "img-hero-products",
+    "page": "products.html",
+    "module": "hero",
+    "filename": "hero-products.webp",
+    "aspect": {
+      "w": 1920,
+      "h": 1080
+    },
+    "alt": "Solder paste extruded through stainless steel stencil onto gold-plated PCB pads, side lighting, silver-gray paste texture",
+    "role": "content",
+    "subject": "COMPOSITION: wide establishing shot, flat even lighting, no central focal point. Macro shot of solder paste extruded through stainless steel stencil onto gold-plated PCB pads. Paste is silver-gray, stencil edge sharply in focus, pads slightly soft focus below. Side lighting reveals paste texture.",
+    "lighting": "Side lighting from left revealing paste texture, metallic reflections on stencil edge, dark background",
+    "style": "photorealistic macro photograph, industrial precision aesthetic, clean and precise, 16:9 aspect",
+    "negative": "NO CGI, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO company names, NO text, NO squeegee visible",
+    "quality": "high",
+    "remove_bg": false
+  },
+  {
+    "id": "img-hero-smt",
+    "page": "products/smt.html",
+    "module": "hero",
+    "filename": "hero-smt.webp",
+    "aspect": {
+      "w": 1920,
+      "h": 1080
+    },
+    "alt": "Vacuum pick-up nozzle placing 0201 chip component onto PCB pad, nozzle dominates frame, blue machine lighting",
+    "role": "content",
+    "subject": "COMPOSITION: wide establishing shot, flat even lighting, no central focal point. Extreme close-up of vacuum pick-up nozzle placing 0201 chip component onto solder paste on PCB pad. Component barely visible, held precisely by nozzle tip dominating frame in sharp focus. Blue machine lighting, warm copper pad reflection below.",
+    "lighting": "Blue machine lighting from above, warm copper reflection from PCB pads below, dark surrounding",
+    "style": "photorealistic macro photograph, extreme close-up, precision engineering aesthetic, 16:9 aspect",
+    "negative": "NO CGI, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO company names, NO text",
+    "quality": "high",
+    "remove_bg": false
+  },
+  {
+    "id": "img-hero-dip",
+    "page": "products/dip.html",
+    "module": "hero",
+    "filename": "hero-dip.webp",
+    "aspect": {
+      "w": 1920,
+      "h": 1080
+    },
+    "alt": "Wave soldering machine molten solder wave cresting, warm amber orange glow, vapor visible",
+    "role": "content",
+    "subject": "COMPOSITION: wide establishing shot, flat even lighting, no central focal point. Close-up of wave soldering machine's solder wave — molten solder cresting in smooth silver arc, warm industrial amber/orange glow from heated solder pot below. Slight vapor/fume visible. Moment just before PCB contacts wave. No board visible.",
+    "lighting": "Warm industrial amber/orange glow from molten solder, dark machine interior, vapor diffusing light",
+    "style": "photorealistic industrial photograph, warm metallic tones, atmospheric vapor, 16:9 aspect",
+    "negative": "NO CGI, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO company names, NO text, NO PCB visible, NO circuit board",
+    "quality": "high",
+    "remove_bg": false
+  },
+  {
+    "id": "img-hero-mixed",
+    "page": "products/mixed.html",
+    "module": "hero",
+    "filename": "hero-mixed.webp",
+    "aspect": {
+      "w": 1920,
+      "h": 1080
+    },
+    "alt": "Split composition PCB: left side dense SMT components sharp focus, right side through-hole capacitor leads soft focus, cool blue vs warm amber",
+    "role": "content",
+    "subject": "COMPOSITION: wide establishing shot, flat even lighting, no central focal point. Split-composition macro: left half shows dense SMT components (tiny chips, QFP package) in sharp focus; right half shows row of through-hole capacitor leads emerging from same board, slightly soft focus. Transition zone is visible trace line crossing PCB. Cool blue light on SMT side, warm amber on DIP side.",
+    "lighting": "Cool blue LED light on SMT left side, warm amber industrial light on DIP right side, natural transition at center trace line",
+    "style": "photorealistic macro photograph, split-lighting composition, single PCB two technologies, 16:9 aspect",
+    "negative": "NO CGI, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO company names, NO text",
+    "quality": "high",
+    "remove_bg": false
+  },
+  {
+    "id": "img-hero-blog",
+    "page": "blog.html",
+    "module": "hero",
+    "filename": "hero-blog.webp",
+    "aspect": {
+      "w": 1920,
+      "h": 1080
+    },
+    "alt": "Abstract PCB trace pattern in extreme macro, side-lit casting long shadows, flowing calligraphic geometry, copper on navy",
+    "role": "content",
+    "subject": "COMPOSITION: wide establishing shot, flat even lighting, no central focal point. Abstract PCB trace pattern in extreme macro, side-lit to cast long shadows across fiberglass substrate. Traces form flowing, calligraphic pattern — not functional circuit but beautiful geometry. Copper-on-navy color scheme. Very shallow DOF so only narrow band is sharp.",
+    "lighting": "Side lighting from left casting long shadows across fiberglass, copper traces catching light, navy background",
+    "style": "photorealistic macro photograph, abstract geometric aesthetic, calligraphic trace patterns, copper-on-navy, 16:9 aspect",
+    "negative": "NO CGI, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO company names, NO text, NO components visible",
+    "quality": "high",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-smt-line",
+    "page": "index.html",
+    "module": "card",
+    "filename": "ill-smt-line.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "Abstract geometric representation of SMT production line, simplified machine shapes, copper trace connecting lines, isometric view",
+    "role": "content",
+    "subject": "Abstract geometric representation of an SMT production line — simplified machine shapes, copper trace-like connecting lines, isometric view, line-art style on dark background",
+    "lighting": "Even ambient lighting, copper accent glow on connecting lines",
+    "style": "isometric line-art illustration, geometric abstraction, navy and copper palette, technical diagram aesthetic",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text, NO photorealistic details",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-dip-line",
+    "page": "index.html",
+    "module": "card",
+    "filename": "ill-dip-line.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "Abstract DIP through-hole assembly, vertical component leads entering board holes, stylized wave shape below, isometric line-art",
+    "role": "content",
+    "subject": "Abstract DIP/through-hole assembly — vertical component leads entering board holes, stylized wave shape below, isometric, line-art style on dark background",
+    "lighting": "Even ambient lighting, warm amber accent on wave form",
+    "style": "isometric line-art illustration, geometric abstraction, navy and warm amber palette, technical diagram aesthetic",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-mixed-line",
+    "page": "index.html",
+    "module": "card",
+    "filename": "ill-mixed-line.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "Abstract mixed assembly, SMT and through-hole components coexisting on single board, two process flows merging, isometric",
+    "role": "content",
+    "subject": "Abstract mixed assembly — SMT and through-hole components coexisting on a single board, two process flows merging, isometric, line-art style on dark background",
+    "lighting": "Dual lighting: cool blue on SMT side, warm amber on through-hole side, merging at center",
+    "style": "isometric line-art illustration, geometric abstraction, dual-tone navy/copper palette, technical diagram aesthetic",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-paste-print",
+    "page": "products/smt.html",
+    "module": "process",
+    "filename": "ill-paste-print.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "Stencil printer abstraction, rectangular frame with grid of dots representing solder paste deposits, geometric isometric",
+    "role": "content",
+    "subject": "Stencil printer abstraction — rectangular frame with grid of dots (solder paste deposits), geometric, isometric view, line-art style on dark background",
+    "lighting": "Even ambient lighting, subtle silver-gray highlights on paste dots",
+    "style": "isometric line-art illustration, geometric abstraction, navy background with silver-copper accents",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-pick-place",
+    "page": "products/smt.html",
+    "module": "equipment",
+    "filename": "ill-pick-place.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "Pick-and-place abstraction, robotic arm with vacuum nozzle over grid, simplified machine geometry, blue-tinted",
+    "role": "content",
+    "subject": "Pick-and-place abstraction — robotic arm with vacuum nozzle over grid, simplified machine geometry, blue-tinted, isometric line-art style on dark background",
+    "lighting": "Cool blue ambient light on machine body, subtle copper accent on nozzle tip",
+    "style": "isometric line-art illustration, simplified industrial geometry, blue-tinted navy palette, technical aesthetic",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-reflow",
+    "page": "products/smt.html",
+    "module": "process",
+    "filename": "ill-reflow.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "Reflow oven abstraction, rectangular tunnel with heat wave visual, gradient warm colors inside cool housing",
+    "role": "content",
+    "subject": "Reflow oven abstraction — rectangular tunnel with heat wave visual, gradient warm colors (amber to orange) inside cool navy housing, isometric line-art style on dark background",
+    "lighting": "Warm amber/orange gradient glow from within tunnel, cool navy exterior housing",
+    "style": "isometric line-art illustration, thermal gradient abstraction, navy exterior with warm interior",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-aoi",
+    "page": "products/smt.html",
+    "module": "equipment",
+    "filename": "ill-aoi.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "AOI inspection abstraction, camera lens element over PCB, scan lines suggesting automated inspection",
+    "role": "content",
+    "subject": "AOI inspection abstraction — camera/lens element over PCB, scan lines suggesting automated inspection, isometric line-art style on dark background",
+    "lighting": "Cool blue-white scan lines over PCB surface, dark navy background",
+    "style": "isometric line-art illustration, inspection technology aesthetic, blue scan lines on navy, geometric precision",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-wave-solder",
+    "page": "products/dip.html",
+    "module": "process",
+    "filename": "ill-wave-solder.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "Wave solder abstraction, wave form under board plane, warm metallic tones",
+    "role": "content",
+    "subject": "Wave solder abstraction — wave form under board plane, warm metallic tones, isometric line-art style on dark background",
+    "lighting": "Warm amber/orange glow from wave form, metallic silver crest highlights, dark background",
+    "style": "isometric line-art illustration, fluid metallic abstraction, warm amber and silver tones on navy",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-xray",
+    "page": "products/smt.html",
+    "module": "process",
+    "filename": "ill-xray.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "X-ray inspection abstraction, circular BGA ball grid viewed through blue-tinted x-ray style overlay",
+    "role": "content",
+    "subject": "X-ray inspection abstraction — circular BGA ball grid viewed through x-ray style blue-tinted overlay, geometric precision, isometric line-art style on dark background",
+    "lighting": "Blue-tinted x-ray transparency effect, subtle white highlights on ball grid, dark background",
+    "style": "isometric line-art illustration, medical/industrial imaging aesthetic, blue-tinted transparency on navy",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-coating",
+    "page": "products/dip.html",
+    "module": "equipment",
+    "filename": "ill-coating.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "Conformal coating abstraction, PCB surface with glossy protective layer being applied, spray nozzle visible",
+    "role": "content",
+    "subject": "Conformal coating abstraction — PCB surface with glossy protective layer being applied, spray nozzle visible, isometric line-art style on dark background",
+    "lighting": "Subtle gloss highlights on coated surface, cool ambient light, dark background",
+    "style": "isometric line-art illustration, protective coating aesthetic, glossy surface highlights on navy",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-precision",
+    "page": "about.html",
+    "module": "card",
+    "filename": "ill-precision.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "General manufacturing precision, caliper measuring a PCB, abstract geometric style",
+    "role": "content",
+    "subject": "General manufacturing precision — caliper measuring a PCB, abstract geometric style, isometric line-art on dark background",
+    "lighting": "Even ambient lighting, subtle copper highlight on measurement markings",
+    "style": "isometric line-art illustration, precision measurement aesthetic, geometric abstraction, navy and copper",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-cert-shield",
+    "page": "about.html",
+    "module": "card",
+    "filename": "ill-cert-shield.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "ISO certification abstraction, geometric shield and checkmark over a grid representing standards, copper and navy",
+    "role": "content",
+    "subject": "ISO certification abstraction — geometric shield/checkmark over a grid (representing standards), copper and navy palette, isometric line-art on dark background",
+    "lighting": "Copper glow on shield emblem, subtle grid lines, dark navy background",
+    "style": "isometric line-art illustration, certification emblem aesthetic, geometric shield design, copper on navy",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text, NO real certification marks",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-factory-abstract",
+    "page": "about.html",
+    "module": "equipment",
+    "filename": "ill-factory-abstract.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "Factory production abstract, conveyor line simplified to geometric forms, isometric line-art, navy tones",
+    "role": "content",
+    "subject": "Factory/production abstract — conveyor line simplified to geometric forms, no people, isometric line-art, navy tones on dark background",
+    "lighting": "Even ambient industrial lighting, subtle copper accents on conveyor elements",
+    "style": "isometric line-art illustration, industrial abstraction, geometric conveyor forms, navy palette",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-selective-solder",
+    "page": "products/dip.html",
+    "module": "equipment",
+    "filename": "ill-selective-solder.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "Selective soldering abstraction, focused solder nozzle on single through-hole joint, precision detail",
+    "role": "content",
+    "subject": "Select soldering abstraction — focused solder nozzle on a single through-hole joint, precision detail, isometric line-art on dark background",
+    "lighting": "Warm solder glow at nozzle tip, cool ambient on surrounding, dark background",
+    "style": "isometric line-art illustration, precision soldering aesthetic, focused nozzle detail, warm amber on navy",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-dfm-abstract",
+    "page": "blog/post-1.html",
+    "module": "blog",
+    "filename": "ill-dfm-abstract.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "PCB trace routing pattern transitioning from chaotic to orderly, representing DFM optimization",
+    "role": "content",
+    "subject": "PCB trace routing pattern transitioning from chaotic to orderly, representing DFM optimization, abstract geometric style on dark background",
+    "lighting": "Gradual transition from warm/amber chaotic side to cool/blue orderly side, copper traces throughout",
+    "style": "abstract geometric illustration, transition aesthetic, chaos-to-order narrative, copper traces on navy",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-ipc-compare",
+    "page": "blog/post-2.html",
+    "module": "blog",
+    "filename": "ill-ipc-compare.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "Two PCBs side by side, one with visible inspection marks representing Class 3, one without representing Class 2, abstract comparison",
+    "role": "content",
+    "subject": "Two PCBs side by side, one with visible inspection marks (representing Class 3), one without (Class 2), abstract comparison, geometric style on dark background",
+    "lighting": "Split lighting: left PCB under inspection blue light with mark overlays, right PCB under neutral light",
+    "style": "abstract geometric comparison illustration, side-by-side PCB aesthetic, inspection marks on navy",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-rework-cost",
+    "page": "blog/post-3.html",
+    "module": "blog",
+    "filename": "ill-rework-cost.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "Magnifying glass over a solder joint revealing a crack defect, abstract warning aesthetic",
+    "role": "content",
+    "subject": "Magnifying glass over a solder joint revealing a crack/defect, abstract warning aesthetic, geometric style on dark background",
+    "lighting": "Focused inspection light through magnifying glass on defect area, subtle red/amber warning glow, dark surroundings",
+    "style": "abstract geometric illustration, inspection/warning aesthetic, magnifying glass over PCB, copper and warning-red accents on navy",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-blog-thumb",
+    "page": "blog.html",
+    "module": "blog",
+    "filename": "ill-blog-thumb.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "Abstract PCB trace maze pattern, copper on navy, representing design insights",
+    "role": "content",
+    "subject": "Abstract PCB trace maze/pattern, copper on navy, representing design insights, geometric style on dark background",
+    "lighting": "Side lighting creating subtle shadows on trace edges, copper reflections, dark navy substrate",
+    "style": "abstract geometric illustration, maze/pattern aesthetic, copper traces on navy, intellectual/insight theme",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-insertion",
+    "page": "products/dip.html",
+    "module": "process",
+    "filename": "ill-insertion.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "Through-hole insertion abstraction, component lead entering PCB hole from above, geometric representation",
+    "role": "content",
+    "subject": "Through-hole insertion abstraction — lead entering PCB hole from above, geometric representation, isometric line-art on dark background",
+    "lighting": "Top-down lighting emphasizing vertical insertion motion, subtle copper accent on lead",
+    "style": "isometric line-art illustration, vertical insertion aesthetic, geometric component lead, navy background",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  },
+  {
+    "id": "img-ill-func-test",
+    "page": "products/mixed.html",
+    "module": "process",
+    "filename": "ill-func-test.webp",
+    "aspect": {
+      "w": 640,
+      "h": 400
+    },
+    "alt": "Functional test abstraction, probe pins contacting test points on PCB, electrical signal visualization as abstract glowing lines",
+    "role": "content",
+    "subject": "Functional test abstraction — probe pins contacting test points on a PCB, electrical signal visualization as abstract glowing lines, isometric line-art on dark background",
+    "lighting": "Cool blue electrical signal glow tracing from probe points, dark navy background, subtle green success indicators",
+    "style": "isometric line-art illustration, electrical testing aesthetic, glowing signal traces, blue and green on navy",
+    "negative": "NO CGI realism, NO 3D render, NO white background, NO people, NO hands, NO building exteriors, NO fake logos, NO text",
+    "quality": "medium",
+    "remove_bg": false
+  }
+]

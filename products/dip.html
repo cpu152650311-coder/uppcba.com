@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIP / Through-Hole Assembly — Wave &amp; Selective Soldering | Uppcba</title>
+  <meta name="description" content="Professional DIP through-hole PCB assembly — wave soldering, selective soldering, conformal coating. Manual, semi-auto, and full-auto insertion. Lead-free SAC305 alloy. Boards up to 600mm x 500mm.">
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style>
+    /* ============================================================
+       PAGE-SPECIFIC STYLES — products/dip.html only
+       Never redefines global classes from design-tokens.css
+       ============================================================ */
+
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      cursor: pointer;
+    }
+
+    .nav-dropdown-toggle::after {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+      margin-top: 2px;
+    }
+
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: -0.75rem;
+      min-width: 200px;
+      background: var(--surface-white);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-nav);
+      padding: var(--sp-1) 0;
+      z-index: 100;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu {
+      display: block;
+    }
+
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 0.5rem 1rem;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--text-secondary) !important;
+      text-decoration: none;
+      transition: background var(--transition-fast), color var(--transition-fast);
+    }
+
+    .nav-dropdown-menu a:hover {
+      background: var(--surface-gray);
+      color: var(--copper) !important;
+    }
+
+    .hero-product .hero-bg::after {
+      background: linear-gradient(
+        135deg,
+        rgba(11,26,46,0.45),
+        rgba(0,60,76,0.55)
+      );
+    }
+
+    .process-step-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--sp-3);
+    }
+
+    .equip-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--sp-3);
+    }
+
+    .cta-secondary-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--text-on-dark);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: rgba(232,236,242,0.4);
+      transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+    }
+
+    .cta-secondary-link:hover {
+      color: var(--copper-hover);
+      text-decoration-color: var(--copper-hover);
+    }
+
+    .process-timeline-copper .process-connector {
+      background: var(--copper);
+      opacity: 0.35;
+    }
+
+    .cert-badge-detail {
+      text-align: center;
+      padding: var(--sp-4);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-card);
+      background: var(--surface-white);
+    }
+
+    .cert-badge-detail .cert-icon-circle {
+      width: 56px;
+      height: 56px;
+      margin-inline: auto;
+      margin-bottom: var(--sp-3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(200,127,46,0.08);
+      border-radius: var(--radius-pill);
+      font-size: 1.5rem;
+    }
+
+    .cert-badge-detail h6 {
+      margin-bottom: var(--sp-1);
+    }
+
+    .cert-badge-detail p {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: var(--lh-relaxed);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Uppcba home">
+        <span class="nav-logo-text">Uppcba</span>
+      </a>
+      <div class="nav-links" id="mainNavLinks">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="../products.html" class="nav-dropdown-toggle active">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="smt.html">SMT Assembly</a>
+            <a href="dip.html" style="color:var(--copper);font-weight:600;">DIP Assembly</a>
+            <a href="mixed.html">Mixed Assembly</a>
+          </div>
+        </div>
+        <a href="../blog.html">Blog</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <a href="#inquiry-modal" class="btn nav-cta" data-modal-open="#inquiry-modal">Get Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         HERO — DIP Assembly
+         ============================================================ -->
+    <section class="page-hero hero-product" aria-label="DIP Assembly hero">
+      <div class="hero-inner">
+        <div class="hero-bg">
+          <!-- IMG:img-hero-dip -->
+          <img
+            src="/generated/hero-dip.webp"
+            alt="Wave soldering machine molten solder wave cresting, warm amber orange glow, vapor visible"
+            data-img-role="content"
+            loading="eager">
+        </div>
+        <div class="hero-inner-content">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator" aria-hidden="true">/</span>
+            <a href="../products.html">Products</a>
+            <span class="separator" aria-hidden="true">/</span>
+            <span class="current">DIP Assembly</span>
+          </nav>
+          <h1>DIP / Through-Hole Assembly</h1>
+          <p class="hero-subtitle">
+            Precision through-hole assembly for connectors, transformers, high-power components, and legacy designs. Wave and selective soldering with full lead-free SAC305 process capability.
+          </p>
+          <div class="hero-actions">
+            <a href="#inquiry-modal" class="btn btn-primary" data-modal-open="#inquiry-modal">Request DIP Quote</a>
+            <a href="#dip-capability" class="btn btn-outline-inverse">View Capabilities</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRUST STRIP
+         ============================================================ -->
+    <section class="section-gap-xs" aria-label="Certifications and standards">
+      <div class="container">
+        <div class="trust-strip">
+          <div class="trust-strip-item">
+            <div class="trust-item-inner" style="display:flex;flex-direction:column;align-items:center;gap:0.375rem;">
+              <span style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--copper);background:var(--copper-light);border-radius:var(--radius-sm);" aria-hidden="true">&#9673;</span>
+              <span style="font-size:var(--text-xs);font-weight:600;color:var(--text-secondary);text-align:center;letter-spacing:var(--ls-label);">ISO 9001</span>
+            </div>
+          </div>
+          <div class="trust-strip-item">
+            <div class="trust-item-inner" style="display:flex;flex-direction:column;align-items:center;gap:0.375rem;">
+              <span style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--copper);background:var(--copper-light);border-radius:var(--radius-sm);" aria-hidden="true">&#9632;</span>
+              <span style="font-size:var(--text-xs);font-weight:600;color:var(--text-secondary);text-align:center;letter-spacing:var(--ls-label);">IPC-A-610</span>
+            </div>
+          </div>
+          <div class="trust-strip-item">
+            <div class="trust-item-inner" style="display:flex;flex-direction:column;align-items:center;gap:0.375rem;">
+              <span style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--copper);background:var(--copper-light);border-radius:var(--radius-sm);" aria-hidden="true">&#10003;</span>
+              <span style="font-size:var(--text-xs);font-weight:600;color:var(--text-secondary);text-align:center;letter-spacing:var(--ls-label);">RoHS</span>
+            </div>
+          </div>
+          <div class="trust-strip-item">
+            <div class="trust-item-inner" style="display:flex;flex-direction:column;align-items:center;gap:0.375rem;">
+              <span style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--copper);background:var(--copper-light);border-radius:var(--radius-sm);" aria-hidden="true">&#9650;</span>
+              <span style="font-size:var(--text-xs);font-weight:600;color:var(--text-secondary);text-align:center;letter-spacing:var(--ls-label);">UL</span>
+            </div>
+          </div>
+          <div class="trust-strip-item">
+            <div class="trust-item-inner" style="display:flex;flex-direction:column;align-items:center;gap:0.375rem;">
+              <span style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--copper);background:var(--copper-light);border-radius:var(--radius-sm);" aria-hidden="true">&#9672;</span>
+              <span style="font-size:var(--text-xs);font-weight:600;color:var(--text-secondary);text-align:center;letter-spacing:var(--ls-label);">J-STD-001</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DIP PROCESS FLOW — 5 Steps
+         ============================================================ -->
+    <section class="section-gap-lg" aria-labelledby="dip-process-heading">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-eyebrow">DIP Process</span>
+          <h2 class="section-title" id="dip-process-heading">Five-Stage Through-Hole Assembly Flow</h2>
+          <p style="max-width:600px;margin-inline:auto;color:var(--text-secondary);line-height:var(--lh-relaxed);">
+            From component preparation through final touch-up, each DIP board follows a controlled sequence with defined accept/reject gates at every inspection point.
+          </p>
+        </div>
+
+        <div class="process-timeline process-timeline-copper">
+          <!-- Step 1: Component Preparation -->
+          <div class="process-step">
+            <div class="process-marker">1</div>
+            <div class="process-connector"></div>
+            <div class="process-body">
+              <!-- IMG:img-ill-insertion -->
+              <img
+                src="/generated/ill-insertion.webp"
+                alt="Through-hole insertion abstraction showing component lead entering PCB hole from above in geometric representation"
+                class="process-step-img"
+                data-img-role="content">
+              <h5>Component Preparation</h5>
+              <p>All through-hole components are kitted, verified against the BOM, and pre-formed if required. Axial and radial lead-forming fixtures ensure consistent standoff height and lead length. Components with long storage intervals undergo solderability testing before kitting. Polarity-sensitive parts are visually double-checked at insertion.</p>
+            </div>
+          </div>
+
+          <!-- Step 2: Manual/Auto Insertion -->
+          <div class="process-step">
+            <div class="process-marker">2</div>
+            <div class="process-connector"></div>
+            <div class="process-body">
+              <!-- IMG:img-ill-insertion -->
+              <img
+                src="/generated/ill-insertion.webp"
+                alt="Through-hole component insertion with lead entering PCB hole from above, precision alignment"
+                class="process-step-img"
+                data-img-role="content">
+              <h5>Manual &amp; Automatic Insertion</h5>
+              <p>Three insertion methods deployed based on component type, volume, and complexity. Manual insertion for low-volume, odd-form, and high-mass components. Semi-automatic insertion with light-guided workstations for mixed batches. Full automatic insertion for high-volume axial and radial components. Every station uses first-article verification before production begins.</p>
+            </div>
+          </div>
+
+          <!-- Step 3: Wave Soldering -->
+          <div class="process-step">
+            <div class="process-marker">3</div>
+            <div class="process-connector"></div>
+            <div class="process-body">
+              <!-- IMG:img-ill-wave-solder -->
+              <img
+                src="/generated/ill-wave-solder.webp"
+                alt="Wave solder abstraction showing wave form under board plane with warm metallic tones"
+                class="process-step-img"
+                data-img-role="content">
+              <h5>Wave Soldering</h5>
+              <p>Lead-free wave soldering using SAC305 alloy at controlled pot temperature of 245&deg;C to 265&deg;C. Dual-wave configuration: turbulent first wave for penetration into tight geometries, smooth second wave for fillet formation and icicle control. Conveyor speed, preheat profile, and flux deposition are set per board type and verified on a sacrificial first-article board. Selective soldering system available for mixed-technology boards where only specific through-hole joints need processing.</p>
+            </div>
+          </div>
+
+          <!-- Step 4: Post-Solder Inspection -->
+          <div class="process-step">
+            <div class="process-marker">4</div>
+            <div class="process-connector"></div>
+            <div class="process-body">
+              <!-- IMG:img-ill-aoi -->
+              <img
+                src="/generated/ill-aoi.webp"
+                alt="AOI inspection abstraction with camera lens element over PCB and scan lines"
+                class="process-step-img"
+                data-img-role="content">
+              <h5>Post-Solder Inspection</h5>
+              <p>Three-tier inspection protocol. Visual inspection by IPC-A-610-certified operators at 4&times; magnification covers 100% of solder joints. Automated optical inspection (AOI) supplements visual with programmable defect detection for consistency across production shifts. In-circuit testing (ICT) and functional testing verify electrical continuity and board-level performance against the netlist and test specification.</p>
+            </div>
+          </div>
+
+          <!-- Step 5: Touch-Up & Rework -->
+          <div class="process-step">
+            <div class="process-marker">5</div>
+            <div class="process-body">
+              <!-- IMG:img-ill-selective-solder -->
+              <img
+                src="/generated/ill-selective-solder.webp"
+                alt="Selective soldering abstraction with focused solder nozzle on single through-hole joint, precision detail"
+                class="process-step-img"
+                data-img-role="content">
+              <h5>Touch-Up &amp; Rework</h5>
+              <p>Identified defects are reworked on temperature-controlled soldering stations with ESD-safe tooling. Every reworked joint is re-inspected to the same Class 3 criteria as the original assembly. Rework is tracked per board and per joint in the batch record. Boards exceeding a defined rework count threshold are escalated to engineering review rather than being passed through. Conformal coating is applied after all rework is closed and passed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CAPABILITY TABLE
+         ============================================================ -->
+    <section class="section-gap-lg" id="dip-capability" aria-labelledby="dip-cap-heading" style="background:var(--surface-gray);">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-eyebrow">Technical Specifications</span>
+          <h2 class="section-title" id="dip-cap-heading">DIP / Through-Hole Capability Parameters</h2>
+          <p style="max-width:600px;margin-inline:auto;color:var(--text-secondary);line-height:var(--lh-relaxed);">
+            Measured specifications for our through-hole assembly line. All values represent production-capable parameters, not theoretical limits.
+          </p>
+        </div>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Specification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Max Board Size</td>
+              <td>600 mm &times; 500 mm</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Board Thickness</td>
+              <td>0.8 mm &ndash; 6.0 mm</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Max Component Height</td>
+              <td style="color:var(--copper);font-weight:600;">70 mm</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Wave Solder Temperature</td>
+              <td>245&deg;C &ndash; 265&deg;C</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Insertion Methods</td>
+              <td style="color:var(--copper);font-weight:600;">Manual, Semi-Auto, Full Auto</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Lead-Free Compatible</td>
+              <td style="color:var(--success);font-weight:600;">Yes (SAC305 alloy)</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Inspection Methods</td>
+              <td>Visual, ICT, Functional Test</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Conformal Coating</td>
+              <td>Selective spray + dip</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EQUIPMENT ROW — 3 Equipment Cards
+         ============================================================ -->
+    <section class="section-gap-lg" aria-labelledby="dip-equip-heading">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-eyebrow">Production Equipment</span>
+          <h2 class="section-title" id="dip-equip-heading">DIP Line Equipment Overview</h2>
+          <p style="max-width:600px;margin-inline:auto;color:var(--text-secondary);line-height:var(--lh-relaxed);">
+            Through-hole assembly equipment maintained to manufacturer specifications with documented preventive maintenance and calibration schedules.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Wave Solder Machine -->
+          <article class="card" style="padding:var(--sp-4);">
+            <!-- IMG:img-ill-wave-solder -->
+            <img
+              src="/generated/ill-wave-solder.webp"
+              alt="Wave solder machine abstraction showing wave form under board plane with warm metallic tones"
+              class="equip-img"
+              data-img-role="content"
+              loading="lazy">
+            <div class="equipment-name">Wave Solder Machine</div>
+            <div style="display:flex;gap:var(--sp-4);margin-bottom:var(--sp-1);margin-top:var(--sp-2);">
+              <div>
+                <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">Dual</span>
+                <span style="font-size:var(--text-xs);color:var(--text-secondary);">Wave</span>
+              </div>
+              <div>
+                <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">SAC305</span>
+                <span style="font-size:var(--text-xs);color:var(--text-secondary);">Alloy</span>
+              </div>
+            </div>
+            <div class="equipment-meta">Lead-free dual-wave system with programmable preheat, flux deposition, and conveyor control. Handles boards up to 600 mm width.</div>
+          </article>
+
+          <!-- Selective Soldering System -->
+          <article class="card" style="padding:var(--sp-4);">
+            <!-- IMG:img-ill-selective-solder -->
+            <img
+              src="/generated/ill-selective-solder.webp"
+              alt="Selective soldering system abstraction with focused solder nozzle on single through-hole joint"
+              class="equip-img"
+              data-img-role="content"
+              loading="lazy">
+            <div class="equipment-name">Selective Soldering System</div>
+            <div style="display:flex;gap:var(--sp-4);margin-bottom:var(--sp-1);margin-top:var(--sp-2);">
+              <div>
+                <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">0.5 mm</span>
+                <span style="font-size:var(--text-xs);color:var(--text-secondary);">Nozzle</span>
+              </div>
+              <div>
+                <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">Program</span>
+                <span style="font-size:var(--text-xs);color:var(--text-secondary);">Per Joint</span>
+              </div>
+            </div>
+            <div class="equipment-meta">Precision selective soldering for mixed-technology boards. Programmable per-joint temperature, dwell time, and solder volume.</div>
+          </article>
+
+          <!-- Conformal Coating Station -->
+          <article class="card" style="padding:var(--sp-4);">
+            <!-- IMG:img-ill-coating -->
+            <img
+              src="/generated/ill-coating.webp"
+              alt="Conformal coating station abstraction showing PCB surface with glossy protective layer being applied"
+              class="equip-img"
+              data-img-role="content"
+              loading="lazy">
+            <div class="equipment-name">Conformal Coating Station</div>
+            <div style="display:flex;gap:var(--sp-4);margin-bottom:var(--sp-1);margin-top:var(--sp-2);">
+              <div>
+                <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">Spray</span>
+                <span style="font-size:var(--text-xs);color:var(--text-secondary);">Method</span>
+              </div>
+              <div>
+                <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">Dip</span>
+                <span style="font-size:var(--text-xs);color:var(--text-secondary);">Method</span>
+              </div>
+            </div>
+            <div class="equipment-meta">Selective spray and dip conformal coating. Acrylic, silicone, and polyurethane materials available. UV inspection verifies coverage.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         QUALITY STANDARDS — 3 Certification Badges
+         ============================================================ -->
+    <section class="section-gap-lg" aria-labelledby="dip-quality-heading" style="background:var(--surface-gray);">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-eyebrow">Quality Assurance</span>
+          <h2 class="section-title" id="dip-quality-heading">Certifications Governing DIP Production</h2>
+          <p style="max-width:600px;margin-inline:auto;color:var(--text-secondary);line-height:var(--lh-relaxed);">
+            Our through-hole assembly process is certified, audited, and maintained to the same exacting standards as our SMT line. No double standard, no shortcut for DIP.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="cert-badge-detail">
+            <div class="cert-icon-circle" aria-hidden="true">&#9632;</div>
+            <h6>IPC-A-610 Class 3</h6>
+            <p>Acceptability of Electronic Assemblies &mdash; Class 3 criteria applied to every through-hole solder joint. Fill percentage, wetting angle, and fillet geometry are verified against the standard for high-reliability electronic products.</p>
+          </div>
+
+          <div class="cert-badge-detail">
+            <div class="cert-icon-circle" aria-hidden="true">&#9673;</div>
+            <h6>ISO 9001:2015</h6>
+            <p>Quality management system covering the full DIP line. Documented procedures for component preparation, wave solder parameter control, inspection workflow, and conformal coating application. Every batch is traceable to its process record.</p>
+          </div>
+
+          <div class="cert-badge-detail">
+            <div class="cert-icon-circle" aria-hidden="true">&#9672;</div>
+            <h6>J-STD-001</h6>
+            <p>Requirements for Soldered Electrical and Electronic Assemblies &mdash; governing the through-hole soldering process from flux selection to final fillet geometry. Operator training, process control, and inspection all comply with J-STD-001 requirements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA BANNER
+         ============================================================ -->
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band-inner">
+        <div>
+          <h2 class="cta-band-title">Request a DIP Assembly Quote</h2>
+          <p class="cta-band-lead">Specify your through-hole requirements, board dimensions, and volume. We return a complete quotation with lead time within one business day.</p>
+        </div>
+        <div class="cta-band-actions" style="align-items:center;">
+          <a href="#inquiry-modal" class="btn btn-primary" data-modal-open="#inquiry-modal">Request Quote</a>
+          <a href="../contact.html" class="cta-secondary-link">Contact Engineer</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Uppcba</h4>
+          <p>
+            Precision PCB assembly for prototype through mid-volume production.
+            ISO 9001, ISO 13485, and IPC-A-610 Class 3 certified. Every board
+            assembled, inspected, and tested under one roof — no subcontracting,
+            no excuses.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../products.html">Products</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="smt.html">SMT Assembly</a></li>
+            <li><a href="dip.html">DIP Assembly</a></li>
+            <li><a href="mixed.html">Mixed Assembly</a></li>
+            <li><a href="../products.html">Box Build</a></li>
+            <li><a href="../about.html">DFM Review</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>
+            Email: inquiry@uppcba.com<br>
+            Phone: +86 (755) 8xxx-xxxx<br><br>
+            Shenzhen, Guangdong<br>
+            China
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Uppcba. All rights reserved.</span>
+        <span>Built with precision.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       INQUIRY MODAL
+       ============================================================ -->
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close inquiry form">&times;</button>
+      <h2 class="modal-title" id="modal-title">Request a Quote</h2>
+      <div class="modal-body">
+        <form action="#" method="POST" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label>
+            <input type="text" id="inq-name" name="name" class="form-input" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-email">Email <span style="color:var(--error);">*</span></label>
+            <input type="email" id="inq-email" name="email" class="form-input" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-company">Company</label>
+            <input type="text" id="inq-company" name="company" class="form-input" placeholder="Your company name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-message">Message <span style="color:var(--error);">*</span></label>
+            <textarea id="inq-message" name="message" class="form-textarea" placeholder="Briefly describe your project, quantity, and any specific requirements..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="../reveal.js"></script>
+</body>
+</html>

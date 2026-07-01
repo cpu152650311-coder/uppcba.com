@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMT Assembly — Precision Surface-Mount PCB Assembly | Uppcba</title>
+  <meta name="description" content="High-precision SMT assembly services — 01005 to fine-pitch BGA, 3D SPI on every print, 100% AOI coverage, IPC-A-610 Class 3 certified. 45,000 CPH placement, 12-zone reflow.">
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style>
+    /* ============================================================
+       PAGE-SPECIFIC STYLES — products/smt.html only
+       Never redefines global classes from design-tokens.css
+       ============================================================ */
+
+    /* --- Nav dropdown --- */
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      cursor: pointer;
+    }
+
+    .nav-dropdown-toggle::after {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+      margin-top: 2px;
+    }
+
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: -0.75rem;
+      min-width: 200px;
+      background: var(--surface-white);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-nav);
+      padding: var(--sp-1) 0;
+      z-index: 100;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu {
+      display: block;
+    }
+
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 0.5rem 1rem;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--text-secondary) !important;
+      text-decoration: none;
+      transition: background var(--transition-fast), color var(--transition-fast);
+    }
+
+    .nav-dropdown-menu a:hover {
+      background: var(--surface-gray);
+      color: var(--copper) !important;
+    }
+
+    /* --- Hero product class --- */
+    .hero-product .hero-bg::after {
+      background: linear-gradient(
+        135deg,
+        rgba(11,26,46,0.45),
+        rgba(0,60,76,0.55)
+      );
+    }
+
+    /* --- Process step image --- */
+    .process-step-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--sp-3);
+    }
+
+    /* --- Equipment card image --- */
+    .equip-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--sp-3);
+    }
+
+    /* --- CTA secondary link --- */
+    .cta-secondary-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--text-on-dark);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: rgba(232,236,242,0.4);
+      transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+    }
+
+    .cta-secondary-link:hover {
+      color: var(--copper-hover);
+      text-decoration-color: var(--copper-hover);
+    }
+
+    /* --- Vertical process timeline (use for process flow) --- */
+    .process-timeline-vert {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* Copper connector for vertical */
+    .process-timeline-copper .process-connector {
+      background: var(--copper);
+      opacity: 0.35;
+    }
+
+    /* Cert badge group */
+    .cert-badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-2);
+      justify-content: center;
+    }
+
+    .cert-badge-detail {
+      text-align: center;
+      padding: var(--sp-4);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-card);
+      background: var(--surface-white);
+    }
+
+    .cert-badge-detail .cert-icon-circle {
+      width: 56px;
+      height: 56px;
+      margin-inline: auto;
+      margin-bottom: var(--sp-3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(200,127,46,0.08);
+      border-radius: var(--radius-pill);
+      font-size: 1.5rem;
+    }
+
+    .cert-badge-detail h6 {
+      margin-bottom: var(--sp-1);
+    }
+
+    .cert-badge-detail p {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: var(--lh-relaxed);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Uppcba home">
+        <span class="nav-logo-text">Uppcba</span>
+      </a>
+      <div class="nav-links" id="mainNavLinks">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="../products.html" class="nav-dropdown-toggle active">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="smt.html" style="color:var(--copper);font-weight:600;">SMT Assembly</a>
+            <a href="dip.html">DIP Assembly</a>
+            <a href="mixed.html">Mixed Assembly</a>
+          </div>
+        </div>
+        <a href="../blog.html">Blog</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <a href="#inquiry-modal" class="btn nav-cta" data-modal-open="#inquiry-modal">Get Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         HERO — SMT Assembly
+         ============================================================ -->
+    <section class="page-hero hero-product" aria-label="SMT Assembly hero">
+      <div class="hero-inner">
+        <div class="hero-bg">
+          <!-- IMG:img-hero-smt -->
+          <img
+            src="/generated/hero-smt.webp"
+            alt="Extreme close-up of vacuum pick-up nozzle placing 0201 chip component onto solder paste on PCB pad, nozzle dominates frame, blue machine lighting"
+            data-img-role="content"
+            loading="eager">
+        </div>
+        <div class="hero-inner-content">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator" aria-hidden="true">/</span>
+            <a href="../products.html">Products</a>
+            <span class="separator" aria-hidden="true">/</span>
+            <span class="current">SMT Assembly</span>
+          </nav>
+          <h1>SMT Assembly</h1>
+          <p class="hero-subtitle">
+            High-speed surface-mount technology from 01005 passives to fine-pitch BGAs. Automated precision at every placement, verified by 3D SPI and dual-stage AOI.
+          </p>
+          <div class="hero-actions">
+            <a href="#inquiry-modal" class="btn btn-primary" data-modal-open="#inquiry-modal">Request SMT Quote</a>
+            <a href="#capability-table" class="btn btn-outline-inverse">View Capabilities</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRUST STRIP
+         ============================================================ -->
+    <section class="section-gap-xs" aria-label="Certifications and standards">
+      <div class="container">
+        <div class="trust-strip">
+          <div class="trust-strip-item">
+            <div class="trust-item-inner" style="display:flex;flex-direction:column;align-items:center;gap:0.375rem;">
+              <span style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--copper);background:var(--copper-light);border-radius:var(--radius-sm);" aria-hidden="true">&#9673;</span>
+              <span style="font-size:var(--text-xs);font-weight:600;color:var(--text-secondary);text-align:center;letter-spacing:var(--ls-label);">ISO 9001</span>
+            </div>
+          </div>
+          <div class="trust-strip-item">
+            <div class="trust-item-inner" style="display:flex;flex-direction:column;align-items:center;gap:0.375rem;">
+              <span style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--copper);background:var(--copper-light);border-radius:var(--radius-sm);" aria-hidden="true">&#9632;</span>
+              <span style="font-size:var(--text-xs);font-weight:600;color:var(--text-secondary);text-align:center;letter-spacing:var(--ls-label);">IPC-A-610</span>
+            </div>
+          </div>
+          <div class="trust-strip-item">
+            <div class="trust-item-inner" style="display:flex;flex-direction:column;align-items:center;gap:0.375rem;">
+              <span style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--copper);background:var(--copper-light);border-radius:var(--radius-sm);" aria-hidden="true">&#10003;</span>
+              <span style="font-size:var(--text-xs);font-weight:600;color:var(--text-secondary);text-align:center;letter-spacing:var(--ls-label);">RoHS</span>
+            </div>
+          </div>
+          <div class="trust-strip-item">
+            <div class="trust-item-inner" style="display:flex;flex-direction:column;align-items:center;gap:0.375rem;">
+              <span style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--copper);background:var(--copper-light);border-radius:var(--radius-sm);" aria-hidden="true">&#9650;</span>
+              <span style="font-size:var(--text-xs);font-weight:600;color:var(--text-secondary);text-align:center;letter-spacing:var(--ls-label);">UL</span>
+            </div>
+          </div>
+          <div class="trust-strip-item">
+            <div class="trust-item-inner" style="display:flex;flex-direction:column;align-items:center;gap:0.375rem;">
+              <span style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--copper);background:var(--copper-light);border-radius:var(--radius-sm);" aria-hidden="true">&#9672;</span>
+              <span style="font-size:var(--text-xs);font-weight:600;color:var(--text-secondary);text-align:center;letter-spacing:var(--ls-label);">J-STD-001</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SMT PROCESS FLOW — 6 Steps
+         ============================================================ -->
+    <section class="section-gap-lg" aria-labelledby="smt-process-heading">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-eyebrow">SMT Process</span>
+          <h2 class="section-title" id="smt-process-heading">Six-Stage Precision Assembly Line</h2>
+          <p style="max-width:600px;margin-inline:auto;color:var(--text-secondary);line-height:var(--lh-relaxed);">
+            Every board passes through six sequential stages with inline inspection at each critical node. No shortcuts, no skipped verifications.
+          </p>
+        </div>
+
+        <div class="process-timeline process-timeline-copper process-timeline-vert">
+          <!-- Step 1: Solder Paste Printing -->
+          <div class="process-step">
+            <div class="process-marker">1</div>
+            <div class="process-connector"></div>
+            <div class="process-body">
+              <!-- IMG:img-ill-paste-print -->
+              <img
+                src="/generated/ill-paste-print.webp"
+                alt="Abstract geometric stencil printer representation with a rectangular frame and grid pattern suggesting solder paste deposits"
+                class="process-step-img"
+                data-img-role="content">
+              <h5>Solder Paste Printing</h5>
+              <p>Laser-cut stainless steel stencils precisely matched to your pad geometry. Fully automatic printer with fiducial alignment ensures deposit accuracy of &plusmn;25 &mu;m at six-sigma repeatability. Stencil cleaning frequency optimized per paste type and board density.</p>
+            </div>
+          </div>
+
+          <!-- Step 2: SPI -->
+          <div class="process-step">
+            <div class="process-marker">2</div>
+            <div class="process-connector"></div>
+            <div class="process-body">
+              <!-- IMG:img-ill-paste-print — reusing paste/stencil theme for SPI -->
+              <img
+                src="/generated/ill-paste-print.webp"
+                alt="Solder paste inspection abstraction showing measurement grid over paste deposits on PCB pads"
+                class="process-step-img"
+                data-img-role="content">
+              <h5>Solder Paste Inspection (3D SPI)</h5>
+              <p>Inline 3D SPI on every single print. The system measures paste volume, area, height, and offset against the golden board profile with micron-level accuracy. Any deviation triggers an immediate line stop and correction before components are placed. This single gate eliminates the leading cause of post-reflow defects.</p>
+            </div>
+          </div>
+
+          <!-- Step 3: Pick & Place -->
+          <div class="process-step">
+            <div class="process-marker">3</div>
+            <div class="process-connector"></div>
+            <div class="process-body">
+              <!-- IMG:img-ill-pick-place -->
+              <img
+                src="/generated/ill-pick-place.webp"
+                alt="Abstract pick-and-place machine representation with robotic arm and vacuum nozzle over a component grid, blue-tinted geometric style"
+                class="process-step-img"
+                data-img-role="content">
+              <h5>Pick &amp; Place</h5>
+              <p>High-speed modular placement platform with 160 feeder positions and vision-centering on every component. Handles the full range from 01005 (0.4 mm &times; 0.2 mm) passives through 45 mm square BGAs. Closed-loop positional feedback verifies placement accuracy on every cycle. Placement speed of 45,000 CPH sustained across the production run.</p>
+            </div>
+          </div>
+
+          <!-- Step 4: Reflow Soldering -->
+          <div class="process-step">
+            <div class="process-marker">4</div>
+            <div class="process-connector"></div>
+            <div class="process-body">
+              <!-- IMG:img-ill-reflow -->
+              <img
+                src="/generated/ill-reflow.webp"
+                alt="Abstract reflow oven representation showing a rectangular tunnel with warm gradient heat wave visualization inside a cool housing"
+                class="process-step-img"
+                data-img-role="content">
+              <h5>Reflow Soldering</h5>
+              <p>Twelve-zone convection reflow with real-time thermal profiling per board type. Each profile is validated against IPC/JEDEC J-STD-020 requirements for the specific component set and board mass. Nitrogen atmosphere available for high-reliability and fine-pitch applications where oxidation control is critical. Profile data is archived with the batch record for full traceability.</p>
+            </div>
+          </div>
+
+          <!-- Step 5: AOI -->
+          <div class="process-step">
+            <div class="process-marker">5</div>
+            <div class="process-connector"></div>
+            <div class="process-body">
+              <!-- IMG:img-ill-aoi -->
+              <img
+                src="/generated/ill-aoi.webp"
+                alt="Abstract AOI inspection representation with camera lens element over a PCB and scan lines suggesting automated optical inspection"
+                class="process-step-img"
+                data-img-role="content">
+              <h5>Automated Optical Inspection (AOI)</h5>
+              <p>Dual-stage AOI: post-placement and post-reflow. 100% coverage on every board. The system checks for solder bridging, insufficient solder, tombstoning, lifted leads, component presence, polarity, and offset against the CAD-derived inspection library. Defect images are saved to the batch record. Any board that triggers a defect flag is quarantined for manual review.</p>
+            </div>
+          </div>
+
+          <!-- Step 6: X-Ray -->
+          <div class="process-step">
+            <div class="process-marker">6</div>
+            <div class="process-body">
+              <!-- IMG:img-ill-xray -->
+              <img
+                src="/generated/ill-xray.webp"
+                alt="X-ray inspection abstraction showing a circular BGA ball grid viewed through blue-tinted x-ray style overlay"
+                class="process-step-img"
+                data-img-role="content">
+              <h5>X-Ray Inspection</h5>
+              <p>Automated X-ray inspection (AXI) for BGA, QFN, and other hidden-joint packages. Detects voiding, insufficient solder, head-in-pillow, and non-wetting defects that optical systems cannot see. BGA void rate is verified against IPC-7095 criteria. Every BGA assembly receives X-ray inspection as a standard step, not an optional add-on.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CAPABILITY TABLE
+         ============================================================ -->
+    <section class="section-gap-lg" id="capability-table" aria-labelledby="smt-cap-heading" style="background:var(--surface-gray);">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-eyebrow">Technical Specifications</span>
+          <h2 class="section-title" id="smt-cap-heading">SMT Capability Parameters</h2>
+          <p style="max-width:600px;margin-inline:auto;color:var(--text-secondary);line-height:var(--lh-relaxed);">
+            Verified specifications for our SMT assembly line. Every parameter below is measured against actual production data, not manufacturer nominal ratings.
+          </p>
+        </div>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Specification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Max Board Size</td>
+              <td>510 mm &times; 460 mm</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Min Board Size</td>
+              <td>50 mm &times; 50 mm</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Board Thickness</td>
+              <td>0.4 mm &ndash; 4.5 mm</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Min Component Size</td>
+              <td style="color:var(--copper);font-weight:600;">01005 (0.4 mm &times; 0.2 mm)</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Max Component Height</td>
+              <td>25 mm</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">BGA Pitch (Minimum)</td>
+              <td style="color:var(--copper);font-weight:600;">0.3 mm</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Placement Speed</td>
+              <td>45,000 CPH</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Number of Feeders</td>
+              <td>160 (8 mm equivalent)</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Reflow Zones</td>
+              <td>12 (convection, nitrogen-capable)</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">AOI Coverage</td>
+              <td style="color:var(--copper);font-weight:600;">100% post-placement + post-reflow</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">Solder Paste Inspection</td>
+              <td>3D SPI on every print</td>
+            </tr>
+            <tr>
+              <td style="font-weight:600;color:var(--text-secondary);">X-Ray Inspection</td>
+              <td>AXI standard for all BGA/QFN assemblies</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EQUIPMENT ROW — 4 Equipment Cards
+         ============================================================ -->
+    <section class="section-gap-lg" aria-labelledby="smt-equip-heading">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-eyebrow">Production Equipment</span>
+          <h2 class="section-title" id="smt-equip-heading">SMT Line Equipment Overview</h2>
+          <p style="max-width:600px;margin-inline:auto;color:var(--text-secondary);line-height:var(--lh-relaxed);">
+            Each machine in the line is production-caliber, maintained to manufacturer specifications, and calibrated on a scheduled preventive-maintenance cycle.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <!-- High-Speed Pick & Place -->
+          <article class="card" style="padding:var(--sp-4);">
+            <!-- IMG:img-ill-pick-place -->
+            <img
+              src="/generated/ill-pick-place.webp"
+              alt="High-speed pick-and-place machine abstraction with robotic arm and vacuum nozzle over component grid"
+              class="equip-img"
+              data-img-role="content"
+              loading="lazy">
+            <div class="equipment-name">High-Speed Pick &amp; Place</div>
+            <div style="display:flex;gap:var(--sp-4);margin-bottom:var(--sp-1);margin-top:var(--sp-2);">
+              <div>
+                <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">45,000</span>
+                <span style="font-size:var(--text-xs);color:var(--text-secondary);">CPH</span>
+              </div>
+              <div>
+                <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">160</span>
+                <span style="font-size:var(--text-xs);color:var(--text-secondary);">Feeders</span>
+              </div>
+            </div>
+            <div class="equipment-meta">Modular platform with vision-centering on every pick cycle. Handles 01005 to 45 mm BGA.</div>
+          </article>
+
+          <!-- Reflow Oven -->
+          <article class="card" style="padding:var(--sp-4);">
+            <!-- IMG:img-ill-reflow -->
+            <img
+              src="/generated/ill-reflow.webp"
+              alt="Abstract reflow oven with warm gradient heat wave visualization inside cool housing"
+              class="equip-img"
+              data-img-role="content"
+              loading="lazy">
+            <div class="equipment-name">Reflow Oven</div>
+            <div style="display:flex;gap:var(--sp-4);margin-bottom:var(--sp-1);margin-top:var(--sp-2);">
+              <div>
+                <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">12</span>
+                <span style="font-size:var(--text-xs);color:var(--text-secondary);">Zones</span>
+              </div>
+              <div>
+                <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">N<sub>2</sub></span>
+                <span style="font-size:var(--text-xs);color:var(--text-secondary);">Atmosphere</span>
+              </div>
+            </div>
+            <div class="equipment-meta">12-zone convection reflow with per-board thermal profiling. Nitrogen-capable for fine-pitch reliability.</div>
+          </article>
+
+          <!-- AOI Machine -->
+          <article class="card" style="padding:var(--sp-4);">
+            <!-- IMG:img-ill-aoi -->
+            <img
+              src="/generated/ill-aoi.webp"
+              alt="AOI inspection machine abstraction with camera lens element over PCB and scan lines"
+              class="equip-img"
+              data-img-role="content"
+              loading="lazy">
+            <div class="equipment-name">AOI Machine</div>
+            <div style="display:flex;gap:var(--sp-4);margin-bottom:var(--sp-1);margin-top:var(--sp-2);">
+              <div>
+                <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">100%</span>
+                <span style="font-size:var(--text-xs);color:var(--text-secondary);">Coverage</span>
+              </div>
+              <div>
+                <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">2&times;</span>
+                <span style="font-size:var(--text-xs);color:var(--text-secondary);">Stages</span>
+              </div>
+            </div>
+            <div class="equipment-meta">Dual-stage automated optical inspection: post-placement and post-reflow. CAD-derived inspection library.</div>
+          </article>
+
+          <!-- X-Ray Inspection -->
+          <article class="card" style="padding:var(--sp-4);">
+            <!-- IMG:img-ill-xray -->
+            <img
+              src="/generated/ill-xray.webp"
+              alt="X-ray inspection abstraction showing BGA ball grid through blue-tinted x-ray overlay"
+              class="equip-img"
+              data-img-role="content"
+              loading="lazy">
+            <div class="equipment-name">X-Ray Inspection</div>
+            <div style="display:flex;gap:var(--sp-4);margin-bottom:var(--sp-1);margin-top:var(--sp-2);">
+              <div>
+                <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">&lt;15%</span>
+                <span style="font-size:var(--text-xs);color:var(--text-secondary);">Max Void</span>
+              </div>
+              <div>
+                <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">AXI</span>
+                <span style="font-size:var(--text-xs);color:var(--text-secondary);">Type</span>
+              </div>
+            </div>
+            <div class="equipment-meta">Automated X-ray inspection for all BGA/QFN assemblies. Void analysis per IPC-7095 class 3 criteria.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         QUALITY STANDARDS — 3 Certification Badges
+         ============================================================ -->
+    <section class="section-gap-lg" aria-labelledby="smt-quality-heading" style="background:var(--surface-gray);">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-eyebrow">Quality Assurance</span>
+          <h2 class="section-title" id="smt-quality-heading">Certifications Governing SMT Production</h2>
+          <p style="max-width:600px;margin-inline:auto;color:var(--text-secondary);line-height:var(--lh-relaxed);">
+            Every SMT assembly run is executed, inspected, and accepted against the following standards. These are not marketing claims — they are audited, certified, and maintained through ongoing surveillance.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <!-- IPC-A-610 Class 3 -->
+          <div class="cert-badge-detail">
+            <div class="cert-icon-circle" aria-hidden="true">&#9632;</div>
+            <h6>IPC-A-610 Class 3</h6>
+            <p>Acceptability of Electronic Assemblies &mdash; the highest performance class. All SMT assemblies are inspected and accepted to Class 3 criteria for high-reliability electronic products where performance on demand is critical and downtime cannot be tolerated.</p>
+          </div>
+
+          <!-- ISO 9001 -->
+          <div class="cert-badge-detail">
+            <div class="cert-icon-circle" aria-hidden="true">&#9673;</div>
+            <h6>ISO 9001:2015</h6>
+            <p>Quality management system certified end-to-end. From incoming material control through in-process verification to final outgoing inspection, every step operates under documented procedures with measurable quality objectives and corrective-action loops.</p>
+          </div>
+
+          <!-- J-STD-001 -->
+          <div class="cert-badge-detail">
+            <div class="cert-icon-circle" aria-hidden="true">&#9672;</div>
+            <h6>J-STD-001</h6>
+            <p>Requirements for Soldered Electrical and Electronic Assemblies &mdash; the process standard governing materials, methods, and verification criteria. All soldering operations, operator training, and process control documentation comply with J-STD-001 requirements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA BANNER
+         ============================================================ -->
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band-inner">
+        <div>
+          <h2 class="cta-band-title">Request an SMT Assembly Quote</h2>
+          <p class="cta-band-lead">Upload your Gerber files and BOM. We respond with a complete technical and commercial quotation within 24 hours.</p>
+        </div>
+        <div class="cta-band-actions" style="align-items:center;">
+          <a href="#inquiry-modal" class="btn btn-primary" data-modal-open="#inquiry-modal">Request Quote</a>
+          <a href="../contact.html" class="cta-secondary-link">Upload Gerber &amp; BOM</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Uppcba</h4>
+          <p>
+            Precision PCB assembly for prototype through mid-volume production.
+            ISO 9001, ISO 13485, and IPC-A-610 Class 3 certified. Every board
+            assembled, inspected, and tested under one roof — no subcontracting,
+            no excuses.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../products.html">Products</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="smt.html">SMT Assembly</a></li>
+            <li><a href="dip.html">DIP Assembly</a></li>
+            <li><a href="mixed.html">Mixed Assembly</a></li>
+            <li><a href="../products.html">Box Build</a></li>
+            <li><a href="../about.html">DFM Review</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>
+            Email: inquiry@uppcba.com<br>
+            Phone: +86 (755) 8xxx-xxxx<br><br>
+            Shenzhen, Guangdong<br>
+            China
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Uppcba. All rights reserved.</span>
+        <span>Built with precision.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       INQUIRY MODAL
+       ============================================================ -->
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close inquiry form">&times;</button>
+      <h2 class="modal-title" id="modal-title">Request a Quote</h2>
+      <div class="modal-body">
+        <form action="#" method="POST" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label>
+            <input type="text" id="inq-name" name="name" class="form-input" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-email">Email <span style="color:var(--error);">*</span></label>
+            <input type="email" id="inq-email" name="email" class="form-input" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-company">Company</label>
+            <input type="text" id="inq-company" name="company" class="form-input" placeholder="Your company name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-message">Message <span style="color:var(--error);">*</span></label>
+            <textarea id="inq-message" name="message" class="form-textarea" placeholder="Briefly describe your project, quantity, and any specific requirements..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="../reveal.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!-- FILE: blocks/equipment-card.html -->
+<article class="equipment-card" style="padding:var(--sp-4);">
+  <!-- IMG:img-equipment-ill -->
+  <div class="img-fallback-panel" style="min-height:200px;margin-bottom:var(--sp-3);border-radius:var(--radius-sm);">
+    <img src="/generated/ill-equipment.webp" alt="{{equipment_img_alt}}" data-img-role="content" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+  </div>
+
+  <!-- Machine name -->
+  <div class="equipment-name">{{equipment_name}}</div>
+
+  <!-- Key metrics -->
+  <div style="display:flex;gap:var(--sp-4);margin-bottom:var(--sp-1);">
+    <div>
+      <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">
+        {{equipment_metric_1_value}}
+      </span>
+      <span style="font-size:var(--text-xs);color:var(--text-secondary);">{{equipment_metric_1_label}}</span>
+    </div>
+    <div>
+      <span style="display:block;font-size:var(--text-h5);font-family:var(--font-display);font-weight:400;color:var(--copper);line-height:var(--lh-tight);">
+        {{equipment_metric_2_value}}
+      </span>
+      <span style="font-size:var(--text-xs);color:var(--text-secondary);">{{equipment_metric_2_label}}</span>
+    </div>
+  </div>
+
+  <!-- Context line -->
+  <div class="equipment-meta">{{equipment_context}}</div>
+</article>
+
+
+<!-- ============================================================
+     B17: comparison-table — Multi-column comparison with copper highlights
+     ============================================================ -->

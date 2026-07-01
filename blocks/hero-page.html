@@ -1,0 +1,32 @@
+<!-- FILE: blocks/hero-page.html -->
+<section class="page-hero" aria-label="Page hero">
+  <div class="hero-inner">
+    <!-- Background image + overlay -->
+    <div class="hero-bg">
+      <!-- IMG:img-hero-page -->
+      <img src="/generated/hero-page.webp" alt="{{hero_page_img_alt}}" data-img-role="content" loading="eager">
+    </div>
+
+    <!-- Content -->
+    <div class="hero-inner-content">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">{{breadcrumb_home}}</a>
+        <span class="separator" aria-hidden="true">/</span>
+        <span class="current">{{breadcrumb_current}}</span>
+      </nav>
+
+      <h1>{{hero_page_title}}</h1>
+
+      <!-- CTA button -->
+      <div class="hero-actions">
+        <a href="/contact.html" class="btn btn-primary">{{hero_page_cta_label}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     B05: cta-banner — Full-width navy strip with copper left bar
+     ============================================================ -->

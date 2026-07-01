@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cost of Rework: Why Quality Inspection Matters in PCB Assembly — Uppcba Blog</title>
+  <meta name="description" content="Explore the compounding cost of PCB assembly defects and learn how AOI, X-ray, ICT, and functional test deliver measurable ROI through early defect detection.">
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style>
+    /* ============================================================
+       PAGE-SPECIFIC STYLES — blog/post-3.html only
+       Never redefines global classes from design-tokens.css
+       ============================================================ */
+
+    .article-cat-badge {
+      display: inline-block;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-eyebrow);
+      color: var(--copper);
+      margin-bottom: var(--sp-2);
+    }
+
+    .related-heading {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: var(--text-h4);
+      color: var(--text-primary);
+      margin-bottom: var(--sp-4);
+    }
+
+    .card-img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-cat-pill {
+      position: absolute;
+      top: var(--sp-2);
+      left: var(--sp-2);
+      display: inline-block;
+      padding: 0.25em 0.65em;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      background: var(--copper);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-label);
+    }
+
+    .card-date {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      margin-bottom: var(--sp-1);
+    }
+
+    .card-excerpt {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--sp-2);
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--copper);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .card-link:hover {
+      color: var(--copper-hover);
+    }
+
+    .article-illustration {
+      border-radius: var(--radius-sm);
+      margin-block: var(--sp-5);
+      border: 1px solid var(--border-default);
+    }
+
+    /* --- Stat cards for inline body use --- */
+    .stat-cards-inline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-4);
+      margin-block: var(--sp-5);
+    }
+
+    @media (max-width: 768px) {
+      .stat-cards-inline {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cta-secondary-link-post {
+      display: inline-flex;
+      align-items: center;
+      color: var(--text-on-dark);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: rgba(232,236,242,0.4);
+      transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+    }
+
+    .cta-secondary-link-post:hover {
+      color: var(--copper-hover);
+      text-decoration-color: var(--copper-hover);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Uppcba home">
+        <span class="nav-logo-text">Uppcba</span>
+      </a>
+      <div class="nav-links" id="mainNavLinks">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="../products.html" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/smt.html">SMT Assembly</a>
+            <a href="../products/dip.html">DIP Assembly</a>
+            <a href="../products/mixed.html">Mixed Assembly</a>
+          </div>
+        </div>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <a href="#inquiry-modal" class="btn nav-cta" data-modal-open="#inquiry-modal">Get Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         ARTICLE HERO
+         ============================================================ -->
+    <header class="article-hero">
+      <div class="container" style="max-width:780px;">
+        <span class="article-category">Industry Trends</span>
+        <h1>The Cost of Rework: Why Quality Inspection Matters in PCB Assembly</h1>
+        <div class="article-meta">
+          May 28, 2026 &middot; 6 min read
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         ARTICLE BODY
+         ============================================================ -->
+    <div class="article-body">
+
+      <h2>The Compounding Cost of Defects</h2>
+
+      <p>
+        There is a well-known rule of thumb in electronics manufacturing: a defect that costs one dollar to catch at
+        the fabrication stage costs ten dollars to catch during assembly, and one hundred dollars to catch in the
+        field. The numbers are not hyperbole — they come from decades of cost-of-quality data aggregated across
+        automotive, aerospace, and medical device supply chains. A solder bridge discovered at AOI costs the time of
+        a rework technician and a few grams of solder. A solder bridge discovered after the product ships to a
+        customer costs a field service visit, a replacement unit, shipping both ways, engineering root-cause-analysis
+        time, and potentially reputational damage that no line item can capture.
+      </p>
+
+      <p>
+        The cost multiplier is not linear because the consequences compound. A field failure triggers investigation
+        of the entire production lot, containment measures, corrective action reports, and possibly regulatory
+        notification — all before you have even paid for the physical repair. This is why inspection is not a
+        cost center. It is an insurance policy with a near-immediate return.
+      </p>
+
+      <h2>Common Defect Types in PCB Assembly</h2>
+
+      <p>
+        The defects that escape a line without adequate inspection fall into predictable categories. Most are
+        preventable with the right combination of process control and detection technology.
+      </p>
+
+      <ul>
+        <li><strong>Solder bridges:</strong> Unintended solder connections between adjacent pads or leads, most common on fine-pitch QFPs and 0201/0402 passives. Causes range from excessive paste deposit to stencil misalignment.</li>
+        <li><strong>Insufficient solder:</strong> Joints with inadequate solder volume, risking intermittent opens under thermal cycling or vibration. Often traced to partially clogged stencil apertures or insufficient squeegee pressure.</li>
+        <li><strong>Tombstoning:</strong> One end of a chip component lifts off the pad during reflow, standing vertically like a tombstone. Caused by uneven wetting forces, typically from pad geometry asymmetry or temperature imbalance across the component.</li>
+        <li><strong>Component shift:</strong> Parts that move during reflow due to unbalanced solder surface tension or insufficient tack force from the paste. Fine-pitch QFNs and BGAs are especially susceptible because their small mass offers little resistance to surface-tension-driven movement.</li>
+      </ul>
+
+      <!-- IMG:img-ill-rework-cost -->
+      <img
+        src="/generated/ill-rework-cost.webp"
+        alt="Magnifying glass over a solder joint revealing a crack defect, abstract warning aesthetic"
+        class="article-illustration"
+        data-img-role="content"
+        loading="lazy">
+
+      <h2>Inspection Technologies and Where They Fit</h2>
+
+      <p>
+        No single inspection method catches everything. A robust quality system uses a layered approach where each
+        technology compensates for the limitations of the others.
+      </p>
+
+      <p>
+        <strong>Automated Optical Inspection (AOI)</strong> uses high-resolution cameras and multi-angle lighting to
+        compare every joint on every board against a golden reference image. It excels at finding solder bridges,
+        insufficient solder, missing components, and polarity errors. AOI is fast — it keeps pace with the line — and
+        it is the first gate every board should pass after reflow. Its limitation is that it cannot see under BGAs,
+        inside PTH barrels below the surface, or through components to hidden joints.
+      </p>
+
+      <p>
+        <strong>X-Ray Inspection (AXI)</strong> fills that gap. It penetrates component bodies and solder joints to
+        reveal voiding, insufficient ball collapse on BGAs, and hidden bridging under packages. Because it is slower
+        than AOI, it is typically used for sampling on Class 2 builds and 100% on Class 3 builds with hidden-joint
+        packages. <strong>In-Circuit Testing (ICT)</strong> and <strong>Flying Probe</strong> verify electrical
+        connectivity — resistance, capacitance, diode polarity, short/open detection — by physically probing test
+        points. They catch assembly errors that create electrically measurable faults but are invisible to optical
+        inspection. Finally, <strong>Functional Test</strong> powers up the board and verifies that it performs its
+        intended function under conditions that simulate real-world operation.
+      </p>
+
+      <h2>The ROI of Inspection</h2>
+
+      <p>
+        Investing in inspection yields direct, measurable savings. A single uncaught solder bridge on a BGA in a
+        medical device can trigger a lot-level recall costing upwards of $50,000 in documentation, re-inspection,
+        rework labor, and shipping — before any regulatory fines. AOI equipment amortizes over tens of thousands of
+        boards; the per-board cost of inspection on a mid-volume line is typically under $2, while the cost of one
+        field return can exceed $500 after shipping, engineering analysis, and rework.
+      </p>
+
+      <!-- Stat Card Group -->
+      <div class="stat-cards-inline">
+        <div class="stat-card">
+          <div class="stat-value">10&times;</div>
+          <div class="stat-label">Cost multiplier: field failure vs. factory catch</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">$50K</div>
+          <div class="stat-label">Average recall cost per lot for a mid-complexity PCB assembly</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">99.7%</div>
+          <div class="stat-label">First-pass yield at Uppcba — achieved through layered inspection</div>
+        </div>
+      </div>
+
+      <h2>Uppcba's Quality Approach</h2>
+
+      <p>
+        Every board assembled on our line passes through 100% AOI after reflow, with X-ray sampling on all BGA and
+        QFN placements. For Class 3 builds, X-ray coverage expands to 100% of hidden-joint packages. A functional
+        test verifies the board performs to specification under power. This three-layer approach — optical, X-ray,
+        electrical — is the reason our first-pass yield rate sits at 99.7%. It is not magic. It is simply the
+        discipline of catching defects at the cheapest possible point in the value chain.
+      </p>
+
+      <p>
+        If your current assembler is not providing inspection data with every shipment — or worse, if you are
+        discovering assembly defects during your own functional test — the economics are working against you.
+        Let us show you what a properly inspected board looks like.
+      </p>
+
+    </div>
+
+    <!-- ============================================================
+         RELATED POSTS
+         ============================================================ -->
+    <section class="section-gap-md" style="background:var(--surface-gray);" aria-labelledby="related-heading">
+      <div class="container">
+        <h2 class="related-heading" id="related-heading">Related Articles</h2>
+        <div class="grid-2">
+
+          <!-- Related: post-1 -->
+          <article class="blog-card">
+            <div class="card-img-wrap">
+              <img
+                src="/generated/ill-blog-thumb.webp"
+                alt="Abstract PCB trace maze pattern, copper on navy, representing design insights"
+                data-img-role="content"
+                loading="lazy">
+              <span class="card-cat-pill">Design for Manufacturing</span>
+            </div>
+            <div class="blog-card-body">
+              <p class="card-date">June 15, 2026</p>
+              <h3 class="blog-card-title">Design for Manufacturability: Preparing Your PCB for SMT Assembly</h3>
+              <p class="card-excerpt">
+                A practical guide to DFM principles every PCB designer should apply before sending a board to SMT production. Panelization, placement, stencil, and BOM best practices.
+              </p>
+              <a href="post-1.html" class="card-link">Read More &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Related: post-2 -->
+          <article class="blog-card">
+            <div class="card-img-wrap">
+              <img
+                src="/generated/ill-blog-thumb.webp"
+                alt="Abstract PCB trace maze pattern, copper on navy, representing design insights"
+                data-img-role="content"
+                loading="lazy">
+              <span class="card-cat-pill">Quality Standards</span>
+            </div>
+            <div class="blog-card-body">
+              <p class="card-date">June 8, 2026</p>
+              <h3 class="blog-card-title">IPC Standards Explained: What Class 2 vs Class 3 Means for Your Product</h3>
+              <p class="card-excerpt">
+                Understand the inspection criteria, acceptance requirements, and cost implications of IPC Class 2 versus Class 3 classification for electronics manufacturing.
+              </p>
+              <a href="post-2.html" class="card-link">Read More &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA BANNER
+         ============================================================ -->
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band-inner">
+        <div>
+          <h2 class="cta-band-title">Ready to work with an assembler that inspects every board?</h2>
+          <p class="cta-band-lead">Upload your BOM and Gerber files. We will respond with a quotation that includes our full inspection protocol — 100% AOI, X-ray sampling, and functional test.</p>
+        </div>
+        <div class="cta-band-actions" style="align-items:center;">
+          <a href="#inquiry-modal" class="btn btn-primary" data-modal-open="#inquiry-modal">Request a Quote</a>
+          <a href="../contact.html" class="cta-secondary-link-post">Contact Quality Team</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Uppcba</h4>
+          <p>
+            Precision PCB assembly for prototype through mid-volume production.
+            ISO 9001, ISO 13485, and IPC-A-610 Class 3 certified. Every board
+            assembled, inspected, and tested under one roof — no subcontracting,
+            no excuses.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../products.html">Products</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../products/smt.html">SMT Assembly</a></li>
+            <li><a href="../products/dip.html">DIP Assembly</a></li>
+            <li><a href="../products/mixed.html">Mixed Assembly</a></li>
+            <li><a href="../products.html">Box Build</a></li>
+            <li><a href="../about.html">DFM Review</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>
+            Email: inquiry@uppcba.com<br>
+            Phone: +86 (755) 8xxx-xxxx<br><br>
+            Shenzhen, Guangdong<br>
+            China
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Uppcba. All rights reserved.</span>
+        <span>Built with precision.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       INQUIRY MODAL
+       ============================================================ -->
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close inquiry form">&times;</button>
+      <h2 class="modal-title" id="modal-title">Request a Quote</h2>
+      <div class="modal-body">
+        <form action="#" method="POST" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label>
+            <input type="text" id="inq-name" name="name" class="form-input" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-email">Email <span style="color:var(--error);">*</span></label>
+            <input type="email" id="inq-email" name="email" class="form-input" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-company">Company</label>
+            <input type="text" id="inq-company" name="company" class="form-input" placeholder="Your company name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-message">Message <span style="color:var(--error);">*</span></label>
+            <textarea id="inq-message" name="message" class="form-textarea" placeholder="Briefly describe your project, quantity, and any specific requirements..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="../reveal.js"></script>
+</body>
+</html>

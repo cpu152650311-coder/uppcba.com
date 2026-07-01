@@ -1,0 +1,84 @@
+<!-- FILE: blocks/inquiry-form.html -->
+<form method="POST" novalidate aria-label="Inquiry form">
+  <!-- Name (required) -->
+  <div class="form-group">
+    <label class="form-label" for="inq-name">{{form_label_name}} <span style="color:var(--error);">*</span></label>
+    <input class="form-input" type="text" id="inq-name" name="name" required placeholder="{{form_placeholder_name}}" autocomplete="name">
+    <div class="form-error" id="err-name" role="alert" hidden>{{form_error_required}}</div>
+  </div>
+
+  <!-- Email (required) -->
+  <div class="form-group">
+    <label class="form-label" for="inq-email">{{form_label_email}} <span style="color:var(--error);">*</span></label>
+    <input class="form-input" type="email" id="inq-email" name="email" required placeholder="{{form_placeholder_email}}" autocomplete="email">
+    <div class="form-error" id="err-email" role="alert" hidden>{{form_error_email}}</div>
+  </div>
+
+  <!-- Company -->
+  <div class="form-group">
+    <label class="form-label" for="inq-company">{{form_label_company}}</label>
+    <input class="form-input" type="text" id="inq-company" name="company" placeholder="{{form_placeholder_company}}" autocomplete="organization">
+  </div>
+
+  <!-- Phone -->
+  <div class="form-group">
+    <label class="form-label" for="inq-phone">{{form_label_phone}}</label>
+    <input class="form-input" type="tel" id="inq-phone" name="phone" placeholder="{{form_placeholder_phone}}" autocomplete="tel">
+  </div>
+
+  <!-- Service Interest (select) -->
+  <div class="form-group">
+    <label class="form-label" for="inq-service">{{form_label_service}}</label>
+    <select class="form-select" id="inq-service" name="service">
+      <option value="">{{form_option_default}}</option>
+      <option value="smt">{{form_option_smt}}</option>
+      <option value="dip">{{form_option_dip}}</option>
+      <option value="mixed">{{form_option_mixed}}</option>
+      <option value="not-sure">{{form_option_not_sure}}</option>
+    </select>
+  </div>
+
+  <!-- Project Type (select) -->
+  <div class="form-group">
+    <label class="form-label" for="inq-project-type">{{form_label_project_type}}</label>
+    <select class="form-select" id="inq-project-type" name="project_type">
+      <option value="">{{form_option_default}}</option>
+      <option value="prototype">{{form_option_prototype}}</option>
+      <option value="small-batch">{{form_option_small_batch}}</option>
+      <option value="medium-batch">{{form_option_medium_batch}}</option>
+      <option value="ongoing">{{form_option_ongoing}}</option>
+    </select>
+  </div>
+
+  <!-- Quantity Range (select) -->
+  <div class="form-group">
+    <label class="form-label" for="inq-quantity">{{form_label_quantity}}</label>
+    <select class="form-select" id="inq-quantity" name="quantity">
+      <option value="">{{form_option_default}}</option>
+      <option value="1-10">{{form_option_qty_1}}</option>
+      <option value="10-100">{{form_option_qty_2}}</option>
+      <option value="100-1000">{{form_option_qty_3}}</option>
+      <option value="1000-5000">{{form_option_qty_4}}</option>
+      <option value="5000+">{{form_option_qty_5}}</option>
+    </select>
+  </div>
+
+  <!-- Message (textarea, required) -->
+  <div class="form-group">
+    <label class="form-label" for="inq-message">{{form_label_message}} <span style="color:var(--error);">*</span></label>
+    <textarea class="form-textarea" id="inq-message" name="message" required placeholder="{{form_placeholder_message}}"></textarea>
+    <div class="form-error" id="err-message" role="alert" hidden>{{form_error_required}}</div>
+  </div>
+
+  <!-- Submit -->
+  <button type="submit" class="btn btn-primary" style="width:100%;padding:0.875rem 2rem;font-size:var(--text-base);">
+    {{form_submit_label}}
+  </button>
+
+  <!-- Success message (hidden by default) -->
+  <div class="form-success" id="form-success" role="alert" hidden style="margin-top:var(--sp-3);">
+    {{form_success_message}}
+  </div>
+</form>
+
+<!-- Compact variant (4 fields only, for index page) -->

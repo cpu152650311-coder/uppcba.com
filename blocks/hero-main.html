@@ -1,0 +1,44 @@
+<!-- FILE: blocks/hero-main.html -->
+<section class="hero-xl" aria-label="Hero">
+  <div class="hero-inner">
+    <!-- Background image + overlay -->
+    <div class="hero-bg">
+      <!-- IMG:img-hero-index -->
+      <img src="/generated/hero-index.webp" alt="{{hero_main_img_alt}}" data-img-role="content" loading="eager">
+    </div>
+
+    <!-- Content -->
+    <div class="hero-inner-content">
+      <h1>{{hero_main_headline}}</h1>
+      <p class="hero-subtitle">{{hero_main_subheadline}}</p>
+
+      <!-- CTA buttons -->
+      <div class="hero-actions">
+        <a href="/contact.html" class="btn btn-primary">{{hero_main_cta_primary}}</a>
+        <a href="/products.html" class="btn btn-outline-inverse">{{hero_main_cta_secondary}}</a>
+      </div>
+
+      <!-- Trust badges row -->
+      <div style="display:flex;flex-wrap:wrap;gap:var(--sp-3);margin-top:var(--sp-5);">
+        <!-- IMG:img-cert-shield -->
+        <div class="cert-badge">
+          <img src="/generated/ill-cert-shield.webp" alt="" width="20" height="20" data-img-role="content" loading="lazy" style="width:20px;height:20px;">
+          <span>{{hero_badge_1}}</span>
+        </div>
+        <div class="cert-badge">
+          <img src="/generated/ill-cert-shield.webp" alt="" width="20" height="20" data-img-role="content" loading="lazy" style="width:20px;height:20px;">
+          <span>{{hero_badge_2}}</span>
+        </div>
+        <div class="cert-badge">
+          <img src="/generated/ill-cert-shield.webp" alt="" width="20" height="20" data-img-role="content" loading="lazy" style="width:20px;height:20px;">
+          <span>{{hero_badge_3}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     B04: hero-page — Inner page hero (48vh/360px max)
+     ============================================================ -->

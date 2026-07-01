@@ -1,0 +1,33 @@
+<!-- FILE: blocks/service-card.html -->
+<article class="card">
+  <!-- IMG:img-service-ill -->
+  <div class="card-media" style="margin-bottom:var(--sp-3);">
+    <img src="/generated/ill-service.webp" alt="{{service_card_img_alt}}" data-img-role="content" loading="lazy">
+  </div>
+
+  <div>
+    <h4>{{service_card_title}}</h4>
+    <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-2);">
+      {{service_card_description}}
+    </p>
+
+    <!-- Spec bullets -->
+    <dl class="spec-mini" style="margin-bottom:var(--sp-2);">
+      <dt>{{service_spec_1_label}}</dt>
+      <dd>{{service_spec_1_value}}</dd>
+      <dt>{{service_spec_2_label}}</dt>
+      <dd>{{service_spec_2_value}}</dd>
+      <dt>{{service_spec_3_label}}</dt>
+      <dd>{{service_spec_3_value}}</dd>
+    </dl>
+
+    <a href="{{service_card_link_url}}" style="font-size:var(--text-sm);font-weight:600;color:var(--copper);">
+      {{service_card_link_text}} &rarr;
+    </a>
+  </div>
+</article>
+
+
+<!-- ============================================================
+     B07: stat-card — Compact metric display, 3 size variants
+     ============================================================ -->

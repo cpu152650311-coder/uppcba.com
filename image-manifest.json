@@ -1,0 +1,226 @@
+[
+  {
+    "id": "img-hero-index",
+    "filename": "hero-index.webp",
+    "path": "/generated/hero-index.webp",
+    "role": "content",
+    "quality": "high",
+    "status": "ok"
+  },
+  {
+    "id": "img-hero-about",
+    "filename": "hero-about.webp",
+    "path": "/generated/hero-about.webp",
+    "role": "content",
+    "quality": "high",
+    "status": "ok"
+  },
+  {
+    "id": "img-hero-contact",
+    "filename": "hero-contact.webp",
+    "path": "/generated/hero-contact.webp",
+    "role": "content",
+    "quality": "high",
+    "status": "ok"
+  },
+  {
+    "id": "img-hero-products",
+    "filename": "hero-products.webp",
+    "path": "/generated/hero-products.webp",
+    "role": "content",
+    "quality": "high",
+    "status": "ok"
+  },
+  {
+    "id": "img-hero-smt",
+    "filename": "hero-smt.webp",
+    "path": "/generated/hero-smt.webp",
+    "role": "content",
+    "quality": "high",
+    "status": "ok"
+  },
+  {
+    "id": "img-hero-dip",
+    "filename": "hero-dip.webp",
+    "path": "/generated/hero-dip.webp",
+    "role": "content",
+    "quality": "high",
+    "status": "ok"
+  },
+  {
+    "id": "img-hero-mixed",
+    "filename": "hero-mixed.webp",
+    "path": "/generated/hero-mixed.webp",
+    "role": "content",
+    "quality": "high",
+    "status": "ok"
+  },
+  {
+    "id": "img-hero-blog",
+    "filename": "hero-blog.webp",
+    "path": "/generated/hero-blog.webp",
+    "role": "content",
+    "quality": "high",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-smt-line",
+    "filename": "ill-smt-line.webp",
+    "path": "/generated/ill-smt-line.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-dip-line",
+    "filename": "ill-dip-line.webp",
+    "path": "/generated/ill-dip-line.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-mixed-line",
+    "filename": "ill-mixed-line.webp",
+    "path": "/generated/ill-mixed-line.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-paste-print",
+    "filename": "ill-paste-print.webp",
+    "path": "/generated/ill-paste-print.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-pick-place",
+    "filename": "ill-pick-place.webp",
+    "path": "/generated/ill-pick-place.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-reflow",
+    "filename": "ill-reflow.webp",
+    "path": "/generated/ill-reflow.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-aoi",
+    "filename": "ill-aoi.webp",
+    "path": "/generated/ill-aoi.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-wave-solder",
+    "filename": "ill-wave-solder.webp",
+    "path": "/generated/ill-wave-solder.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-xray",
+    "filename": "ill-xray.webp",
+    "path": "/generated/ill-xray.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-coating",
+    "filename": "ill-coating.webp",
+    "path": "/generated/ill-coating.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-precision",
+    "filename": "ill-precision.webp",
+    "path": "/generated/ill-precision.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-cert-shield",
+    "filename": "ill-cert-shield.webp",
+    "path": "/generated/ill-cert-shield.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-factory-abstract",
+    "filename": "ill-factory-abstract.webp",
+    "path": "/generated/ill-factory-abstract.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-selective-solder",
+    "filename": "ill-selective-solder.webp",
+    "path": "/generated/ill-selective-solder.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-dfm-abstract",
+    "filename": "ill-dfm-abstract.webp",
+    "path": "/generated/ill-dfm-abstract.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-ipc-compare",
+    "filename": "ill-ipc-compare.webp",
+    "path": "/generated/ill-ipc-compare.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-rework-cost",
+    "filename": "ill-rework-cost.webp",
+    "path": "/generated/ill-rework-cost.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-blog-thumb",
+    "filename": "ill-blog-thumb.webp",
+    "path": "/generated/ill-blog-thumb.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-insertion",
+    "filename": "ill-insertion.webp",
+    "path": "/generated/ill-insertion.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  },
+  {
+    "id": "img-ill-func-test",
+    "filename": "ill-func-test.webp",
+    "path": "/generated/ill-func-test.webp",
+    "role": "content",
+    "quality": "medium",
+    "status": "ok"
+  }
+]

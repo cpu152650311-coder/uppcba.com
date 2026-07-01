@@ -1,0 +1,15 @@
+<!-- FILE: blocks/breadcrumb.html -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">{{breadcrumb_home}}</a>
+  <span class="separator" aria-hidden="true">/</span>
+  <a href="{{breadcrumb_parent_url}}">{{breadcrumb_parent}}</a>
+  <span class="separator" aria-hidden="true">/</span>
+  <span class="current">{{breadcrumb_current}}</span>
+</nav>
+
+<!-- Shallow variant (Home > Current, no parent) -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">{{breadcrumb_home}}</a>
+  <span class="separator" aria-hidden="true">/</span>
+  <span class="current">{{breadcrumb_current}}</span>
+</nav>

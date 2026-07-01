@@ -1,0 +1,73 @@
+{
+  "project": "uppcba.com",
+  "pages": {
+    "index.html": {
+      "execution_model": "sonnet",
+      "blocks": ["navbar","hero-main","trust-strip","section-heading","service-card","media-split","stat-card","process-step","cta-banner","footer"],
+      "modules": ["navbar","hero-main","trust-strip","services-grid","why-us","process-timeline","cta-banner","footer"],
+      "min_modules": 8,
+      "min_words": 400,
+      "min_cta": 2
+    },
+    "about.html": {
+      "execution_model": "deepseek",
+      "blocks": ["navbar","hero-page","section-heading","text-block","stat-card","equipment-card","certification-badge","cta-banner","footer","breadcrumb"],
+      "modules": ["navbar","hero-page","company-story","capability-grid","equipment-showcase","certification-list","cta-banner","footer"],
+      "min_modules": 7,
+      "min_words": 650,
+      "min_cta": 2
+    },
+    "contact.html": {
+      "execution_model": "deepseek",
+      "blocks": ["navbar","hero-page","section-heading","inquiry-form","contact-info-card","faq-accordion","cta-banner","footer","breadcrumb"],
+      "modules": ["navbar","hero-page","contact-layout","faq-accordion","cta-banner","footer"],
+      "min_modules": 6,
+      "min_words": 500,
+      "min_cta": 2
+    },
+    "products.html": {
+      "execution_model": "deepseek",
+      "blocks": ["navbar","hero-page","section-heading","service-card","comparison-table","stat-card","cta-banner","footer","breadcrumb"],
+      "modules": ["navbar","hero-page","service-detail-cards","comparison-section","capability-highlights","cta-banner","footer"],
+      "min_modules": 7,
+      "min_words": 600,
+      "min_cta": 2
+    },
+    "products/smt.html": {
+      "execution_model": "sonnet",
+      "blocks": ["navbar","hero-page","section-heading","process-step","spec-table","equipment-card","certification-badge","cta-banner","footer","breadcrumb"],
+      "modules": ["navbar","hero-page","process-flow","capability-table","equipment-row","quality-standards","cta-banner","footer"],
+      "min_modules": 8,
+      "min_words": 500,
+      "min_cta": 2
+    },
+    "products/dip.html": {
+      "execution_model": "sonnet",
+      "blocks": ["navbar","hero-page","section-heading","process-step","spec-table","equipment-card","certification-badge","cta-banner","footer","breadcrumb"],
+      "modules": ["navbar","hero-page","process-flow","capability-table","equipment-row","quality-standards","cta-banner","footer"],
+      "min_modules": 8,
+      "min_words": 500,
+      "min_cta": 2
+    },
+    "products/mixed.html": {
+      "execution_model": "sonnet",
+      "blocks": ["navbar","hero-page","section-heading","process-step","spec-table","challenges-cards","equipment-card","cta-banner","footer","breadcrumb"],
+      "modules": ["navbar","hero-page","process-flow","capability-table","challenges-solved","equipment-row","cta-banner","footer"],
+      "min_modules": 8,
+      "min_words": 550,
+      "min_cta": 2
+    },
+    "blog.html": {
+      "execution_model": "deepseek",
+      "blocks": ["navbar","hero-page","section-heading","blog-card","topic-pills","cta-banner","footer","breadcrumb"],
+      "modules": ["navbar","hero-page","blog-grid","topic-browse","cta-banner","footer"],
+      "min_modules": 6,
+      "min_words": 350,
+      "min_cta": 2
+    }
+  },
+  "agent_rules": {
+    "prohibited": ["modify tokens","write nav CSS","invent layouts","alter block structure",".observe(qsa)","CDN URLs","redefine global classes","substitute icon for content image","newsletter CTAs"],
+    "required": ["copy nav/footer/modal HTML","ASSEMBLE FROM blocks filling {{placeholders}} and IMG only","media-split for text+image","content images from /generated/ with data-img-role=content","reveal.js via script src","follow spec spacing + execution_model","internal-link quota",">=2 inquiry CTAs","real copy","proper hero padding from tokens"]
+  }
+}

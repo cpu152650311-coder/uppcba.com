@@ -1,0 +1,30 @@
+<!-- FILE: blocks/contact-info-card.html -->
+<div style="display:flex;align-items:flex-start;gap:var(--sp-3);">
+  <!-- Copper-tinted icon container -->
+  <div style="
+    width:48px;height:48px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(200,127,46,0.10);
+    border-radius:var(--radius-pill);
+    font-size:var(--text-h5);
+    color:var(--copper);
+    line-height:1;
+  " aria-hidden="true">
+    <!-- IMG:img-contact-icon -->
+    {{contact_icon_symbol}}
+  </div>
+
+  <div>
+    <span style="display:block;font-size:var(--text-sm);font-weight:600;color:var(--text-secondary);margin-bottom:4px;">
+      {{contact_label}}
+    </span>
+    <span style="font-size:var(--text-base);color:var(--text-primary);line-height:var(--lh-relaxed);">
+      {{contact_value}}
+    </span>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     B12: blog-card — Blog listing card with illustration, category, excerpt
+     ============================================================ -->

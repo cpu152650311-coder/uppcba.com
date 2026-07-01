@@ -1,0 +1,21 @@
+{
+  "project": "uppcba.com",
+  "version": "6.7",
+  "criteria": {
+    "body_content": { "check": "grep_all '<body' | wc -c", "min": 500, "description": "Body must contain >= 500 chars" },
+    "no_cdn": { "check": "grep_all 'fonts.googleapis.com|cdn.jsdelivr.net|unpkg.com|cdnjs.cloudflare.com|unsplash|picsum'", "must_be_empty": true, "description": "Zero CDN references" },
+    "system_fonts": { "check": "grep_all 'Georgia|system-ui|Segoe UI'", "must_exist": true, "description": "System fonts only" },
+    "content_images": { "check": "grep_all 'data-img-role=\"content\"' | wc -l", "min_per_page": 1, "description": "Every page must use content images" },
+    "inquiry_cta": { "check": "grep_all 'data-modal-open|Request a Quote|Get Quote|Submit Inquiry|Contact Our Engineers' | wc -l", "min_per_page": 2, "description": ">=2 inquiry CTAs per page" },
+    "no_newsletter": { "check": "grep_all 'newsletter|subscribe|stay updated|privacy policy'", "must_be_empty": true, "description": "No newsletter/subscribe CTAs" },
+    "faq_interaction": { "check": "grep_all 'faq-item.open' in CSS", "must_exist": true, "description": "FAQ open class must exist in CSS" },
+    "modal_interaction": { "check": "grep_all 'modal-overlay.open' in CSS", "must_exist": true, "description": "Modal open class must exist in CSS" },
+    "nav_button_spec": { "check": "grep_all 'btn-primary.*nav-cta|nav-cta.*btn-primary' in HTML", "must_be_empty": true, "description": "Nav buttons must not mix btn-primary and nav-cta" },
+    "image_ref_integrity": { "check": "cross-check image-manifest.json status=ok against HTML img src + CSS url()", "must_be": "100%", "description": "All generated images must be referenced" },
+    "no_people": { "check": "grep_all 'people|person|face|hands|silhouette|operator|worker' in image prompts and alt text", "must_be_empty": true, "description": "No people in any image" },
+    "no_building_exteriors": { "check": "grep_all 'building|exterior|factory building|office|campus' in image prompts", "must_be_empty": true, "description": "No building exteriors" },
+    "hero_overlay_standard": { "check": "grep_all 'rgba(11,26,46,0.72).*rgba(0,60,76,0.78)' in CSS", "must_exist": true, "description": "Standard hero overlay must exist" },
+    "no_scroll_reveal_animation": { "check": "grep_all 'reveal.*transform|reveal.*translate|reveal.*opacity.*0[^.]'", "must_be_empty": true, "description": "No scroll-reveal animations" }
+  },
+  "content_image_ratio": { "min": 0.6, "description": "At least 60% of images must be content images (not decor icons)" }
+}

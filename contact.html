@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Uppcba — Get a Quote for PCB Assembly | SMT, DIP, Mixed</title>
+  <meta name="description" content="Contact Uppcba for precision PCB assembly services. Submit your BOM and Gerber files for a quotation within 24 hours. Email info@uppcba.com. Based in Shenzhen, China.">
+  <link rel="stylesheet" href="design-tokens.css">
+  <style>
+    /* ============================================================
+       PAGE-SPECIFIC STYLES — contact.html only
+       Never redefines global classes from design-tokens.css
+       ============================================================ */
+
+    /* Nav dropdown */
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      cursor: pointer;
+    }
+
+    .nav-dropdown-toggle::after {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+      margin-top: 2px;
+    }
+
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: -0.75rem;
+      min-width: 200px;
+      background: var(--surface-white);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-nav);
+      padding: var(--sp-1) 0;
+      z-index: 100;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu {
+      display: block;
+    }
+
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 0.5rem 1rem;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--text-secondary) !important;
+      text-decoration: none;
+      transition: background var(--transition-fast), color var(--transition-fast);
+    }
+
+    .nav-dropdown-menu a:hover {
+      background: var(--surface-gray);
+      color: var(--copper) !important;
+    }
+
+    /* Contact 2-column layout */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 6fr 4fr;
+      gap: var(--sp-8);
+      align-items: start;
+    }
+
+    .contact-form-panel {
+      background: var(--surface-white);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-sm);
+      padding: var(--sp-5);
+      box-shadow: var(--shadow-card);
+    }
+
+    .contact-form-panel h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: var(--text-h4);
+      margin-bottom: var(--sp-4);
+    }
+
+    .contact-info-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-5);
+    }
+
+    .contact-info-sidebar > div {
+      background: var(--surface-white);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-sm);
+      padding: var(--sp-4);
+      box-shadow: var(--shadow-card);
+    }
+
+    /* Contact icon mark */
+    .contact-icon-circle {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(200,127,46,0.10);
+      border-radius: var(--radius-pill);
+      font-size: var(--text-h5);
+      color: var(--copper);
+      line-height: 1;
+    }
+
+    /* FAQ section wrapper */
+    .faq-section {
+      max-width: 800px;
+      margin-inline: auto;
+    }
+
+    @media (max-width: 768px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: var(--sp-5);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR — exact copy from index.html
+       ============================================================ -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Uppcba home">
+        <span class="nav-logo-text">Uppcba</span>
+      </a>
+      <div class="nav-links" id="mainNavLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="products.html" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="products/smt.html">SMT Assembly</a>
+            <a href="products/dip.html">DIP Assembly</a>
+            <a href="products/mixed.html">Mixed Assembly</a>
+          </div>
+        </div>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <a href="#inquiry-modal" class="btn nav-cta" data-modal-open="#inquiry-modal">Get Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         HERO — page-hero variant
+         ============================================================ -->
+    <section class="page-hero" aria-label="Page hero">
+      <div class="hero-inner">
+        <div class="hero-bg">
+          <!-- IMG:img-hero-contact -->
+          <img
+            src="/generated/hero-contact.webp"
+            alt="Fiber-optic inspection probe examining BGA solder joint, cool white-blue light, copper specular highlight"
+            data-img-role="content"
+            loading="eager">
+        </div>
+        <div class="hero-inner-content">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="separator" aria-hidden="true">/</span>
+            <span class="current">Contact</span>
+          </nav>
+          <h1>Contact Us</h1>
+          <div class="hero-actions">
+            <a href="#contact-form-section" class="btn btn-primary">Send an Inquiry</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT LAYOUT — 2 columns
+         ============================================================ -->
+    <section class="section-gap-lg" aria-labelledby="contact-heading" id="contact-form-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-eyebrow">Get in Touch</span>
+          <h2 class="section-title" id="contact-heading">Start Your Project</h2>
+          <p style="max-width:560px;margin-inline:auto;color:var(--text-secondary);line-height:var(--lh-relaxed);">
+            Fill out the form below and our engineering team will review your requirements. We respond to every inquiry within 24 hours.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Left: Full Inquiry Form -->
+          <div class="contact-form-panel" id="contact-form">
+            <h3>Project Details</h3>
+            <form action="#" method="POST" novalidate aria-label="Inquiry form">
+              <!-- Name (required) -->
+              <div class="form-group">
+                <label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label>
+                <input class="form-input" type="text" id="inq-name" name="name" required placeholder="Your full name" autocomplete="name">
+              </div>
+
+              <!-- Email (required) -->
+              <div class="form-group">
+                <label class="form-label" for="inq-email">Email <span style="color:var(--error);">*</span></label>
+                <input class="form-input" type="email" id="inq-email" name="email" required placeholder="you@company.com" autocomplete="email">
+              </div>
+
+              <!-- Company -->
+              <div class="form-group">
+                <label class="form-label" for="inq-company">Company</label>
+                <input class="form-input" type="text" id="inq-company" name="company" placeholder="Your company name" autocomplete="organization">
+              </div>
+
+              <!-- Phone -->
+              <div class="form-group">
+                <label class="form-label" for="inq-phone">Phone</label>
+                <input class="form-input" type="tel" id="inq-phone" name="phone" placeholder="+1 555 000 0000" autocomplete="tel">
+              </div>
+
+              <!-- Service Interest (select) -->
+              <div class="form-group">
+                <label class="form-label" for="inq-service">Service Interest</label>
+                <select class="form-select" id="inq-service" name="service">
+                  <option value="">Select a service&hellip;</option>
+                  <option value="smt">SMT Assembly</option>
+                  <option value="dip">DIP Assembly</option>
+                  <option value="mixed">Mixed Assembly</option>
+                  <option value="not-sure">Not Sure &mdash; Need Advice</option>
+                </select>
+              </div>
+
+              <!-- Project Type (select) -->
+              <div class="form-group">
+                <label class="form-label" for="inq-project-type">Project Type</label>
+                <select class="form-select" id="inq-project-type" name="project_type">
+                  <option value="">Select project type&hellip;</option>
+                  <option value="prototype">Prototype</option>
+                  <option value="small-batch">Small Batch</option>
+                  <option value="medium-batch">Medium Batch</option>
+                  <option value="ongoing">Ongoing Production</option>
+                </select>
+              </div>
+
+              <!-- Quantity Range (select) -->
+              <div class="form-group">
+                <label class="form-label" for="inq-quantity">Estimated Quantity</label>
+                <select class="form-select" id="inq-quantity" name="quantity">
+                  <option value="">Select quantity range&hellip;</option>
+                  <option value="1-10">1 &ndash; 10</option>
+                  <option value="10-100">10 &ndash; 100</option>
+                  <option value="100-1000">100 &ndash; 1,000</option>
+                  <option value="1000-5000">1,000 &ndash; 5,000</option>
+                  <option value="5000+">5,000+</option>
+                </select>
+              </div>
+
+              <!-- Message (textarea, required) -->
+              <div class="form-group">
+                <label class="form-label" for="inq-message">Message <span style="color:var(--error);">*</span></label>
+                <textarea class="form-textarea" id="inq-message" name="message" required placeholder="Briefly describe your project, quantity, and any specific requirements&hellip;"></textarea>
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" class="btn btn-primary" style="width:100%;padding:0.875rem 2rem;font-size:var(--text-base);">
+                Submit Inquiry
+              </button>
+            </form>
+          </div>
+
+          <!-- Right: 3 Contact Info Cards -->
+          <div class="contact-info-sidebar">
+            <div style="display:flex;align-items:flex-start;gap:var(--sp-3);">
+              <div class="contact-icon-circle" aria-hidden="true">&#9993;</div>
+              <div>
+                <span style="display:block;font-size:var(--text-sm);font-weight:600;color:var(--text-secondary);margin-bottom:4px;">
+                  Email
+                </span>
+                <span style="font-size:var(--text-base);color:var(--text-primary);line-height:var(--lh-relaxed);">
+                  info@uppcba.com
+                </span>
+              </div>
+            </div>
+
+            <div style="display:flex;align-items:flex-start;gap:var(--sp-3);">
+              <div class="contact-icon-circle" aria-hidden="true">&#9742;</div>
+              <div>
+                <span style="display:block;font-size:var(--text-sm);font-weight:600;color:var(--text-secondary);margin-bottom:4px;">
+                  Phone
+                </span>
+                <span style="font-size:var(--text-base);color:var(--text-primary);line-height:var(--lh-relaxed);">
+                  +86-755-XXXX-XXXX
+                </span>
+              </div>
+            </div>
+
+            <div style="display:flex;align-items:flex-start;gap:var(--sp-3);">
+              <div class="contact-icon-circle" aria-hidden="true">&#9906;</div>
+              <div>
+                <span style="display:block;font-size:var(--text-sm);font-weight:600;color:var(--text-secondary);margin-bottom:4px;">
+                  Address
+                </span>
+                <span style="font-size:var(--text-base);color:var(--text-primary);line-height:var(--lh-relaxed);">
+                  Shenzhen, Guangdong<br>China
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ ACCORDION — 6 items
+         ============================================================ -->
+    <section class="section-gap-lg" aria-labelledby="faq-heading" style="background:var(--surface-gray);">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-eyebrow">Common Questions</span>
+          <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+          <p style="max-width:560px;margin-inline:auto;color:var(--text-secondary);line-height:var(--lh-relaxed);">
+            Answers to the questions we hear most often from new clients. If you do not see your question here, reach out directly.
+          </p>
+        </div>
+
+        <div class="faq-section">
+          <div class="faq-list" id="faqList">
+            <!-- Item 1 -->
+            <div class="faq-item open">
+              <button class="faq-question" aria-expanded="true">
+                What are your typical lead times?
+              </button>
+              <div class="faq-answer">
+                <p>Prototype runs (1&ndash;50 boards): 3&ndash;5 business days. Small batch (100&ndash;500 boards): 7&ndash;10 business days. Medium batch (500&ndash;5,000 boards): 10&ndash;15 business days. Rush service is available for time-critical projects &mdash; contact us with your deadline and we will confirm feasibility within hours.</p>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What is your minimum order quantity (MOQ)?
+              </button>
+              <div class="faq-answer">
+                <p>There is no strict minimum order quantity. We accept prototype runs starting from a single board. Pricing adjusts with volume, so larger quantities benefit from economies of scale, but we never turn away small projects. This is core to our mission of making professional PCBA accessible to companies of all sizes.</p>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What file formats do you accept?
+              </button>
+              <div class="faq-answer">
+                <p>We accept Gerber RS-274X and RS-274X2 formats for PCB fabrication data, ODB++ for integrated data packages, BOM in CSV or XLSX format, CPL/PnP (component placement) in CSV format, schematic PDF for design review, and assembly drawings in PDF format. If you are unsure about your file set, our engineering team can guide you during the DFM review.</p>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Do you offer NDA protection?
+              </button>
+              <div class="faq-answer">
+                <p>Yes. We sign mutual non-disclosure agreements as standard practice before reviewing any design files. Your intellectual property is treated with the highest level of confidentiality. All design data is stored on access-controlled servers, and our staff are bound by confidentiality obligations. We are also open to signing customer-specific NDAs if required.</p>
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What are your payment terms?
+              </button>
+              <div class="faq-answer">
+                <p>For new clients, our standard terms are 50% deposit to begin production and 50% before shipment. For established clients with a trading history, we offer net 30-day payment terms. We accept payment via T/T (telegraphic transfer), Letter of Credit (LC), and PayPal for smaller transactions. All invoices are issued in USD unless otherwise agreed.</p>
+              </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Do you ship internationally?
+              </button>
+              <div class="faq-answer">
+                <p>Yes, we ship worldwide. For prototypes and small-batch orders, we use DHL, UPS, or FedEx express services with typical delivery times of 3&ndash;7 business days. For volume production, we offer sea freight as a cost-effective option with delivery times of 15&ndash;30 days depending on destination. All shipments are fully insured and trackable.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA BANNER
+         ============================================================ -->
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band-inner">
+        <div>
+          <h3 class="cta-band-title">Need an Urgent Quote?</h3>
+          <p class="cta-band-lead">We respond within 24 hours. Upload your BOM and Gerber files and our engineers will get back to you with a complete quotation.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="#inquiry-modal" class="btn btn-primary" data-modal-open="#inquiry-modal">Get a Quick Quote</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — exact copy from index.html
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Uppcba</h4>
+          <p>
+            Precision PCB assembly for prototype through mid-volume production.
+            ISO 9001, ISO 13485, and IPC-A-610 Class 3 certified. Every board
+            assembled, inspected, and tested under one roof &mdash; no subcontracting,
+            no excuses.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="products/smt.html">SMT Assembly</a></li>
+            <li><a href="products/dip.html">DIP Assembly</a></li>
+            <li><a href="products/mixed.html">Mixed Assembly</a></li>
+            <li><a href="products.html">Box Build</a></li>
+            <li><a href="about.html">DFM Review</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>
+            Email: inquiry@uppcba.com<br>
+            Phone: +86 (755) 8xxx-xxxx<br><br>
+            Shenzhen, Guangdong<br>
+            China
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Uppcba. All rights reserved.</span>
+        <span>Built with precision.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       INQUIRY MODAL — exact copy from index.html
+       ============================================================ -->
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close inquiry form">&times;</button>
+      <h2 class="modal-title" id="modal-title">Request a Quote</h2>
+      <div class="modal-body">
+        <form action="#" method="POST" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label>
+            <input type="text" id="inq-name" name="name" class="form-input" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-email">Email <span style="color:var(--error);">*</span></label>
+            <input type="email" id="inq-email" name="email" class="form-input" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-company">Company</label>
+            <input type="text" id="inq-company" name="company" class="form-input" placeholder="Your company name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-message">Message <span style="color:var(--error);">*</span></label>
+            <textarea id="inq-message" name="message" class="form-textarea" placeholder="Briefly describe your project, quantity, and any specific requirements..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="reveal.js"></script>
+</body>
+</html>

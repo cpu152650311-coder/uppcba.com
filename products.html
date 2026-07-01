@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCB Assembly Services — SMT, DIP &amp; Mixed Technology | Uppcba</title>
+  <meta name="description" content="Explore Uppcba PCB assembly services: high-speed SMT assembly, precision DIP through-hole assembly, and mixed-technology assembly. 01005 to BGA 0.3mm pitch. ISO-certified, prototype to mid-volume.">
+  <link rel="stylesheet" href="design-tokens.css">
+  <style>
+    /* ============================================================
+       PAGE-SPECIFIC STYLES — products.html only
+       Never redefines global classes from design-tokens.css
+       ============================================================ */
+
+    /* Nav dropdown */
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      cursor: pointer;
+    }
+
+    .nav-dropdown-toggle::after {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+      margin-top: 2px;
+    }
+
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: -0.75rem;
+      min-width: 200px;
+      background: var(--surface-white);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-nav);
+      padding: var(--sp-1) 0;
+      z-index: 100;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu {
+      display: block;
+    }
+
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 0.5rem 1rem;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--text-secondary) !important;
+      text-decoration: none;
+      transition: background var(--transition-fast), color var(--transition-fast);
+    }
+
+    .nav-dropdown-menu a:hover {
+      background: var(--surface-gray);
+      color: var(--copper) !important;
+    }
+
+    /* Service detail card image fills available space */
+    .service-detail-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Key-spec bullet list inside service detail cards */
+    .key-specs {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+      margin-bottom: var(--sp-3);
+    }
+
+    .key-spec-item {
+      display: flex;
+      gap: var(--sp-2);
+      align-items: flex-start;
+    }
+
+    .key-spec-item .spec-dot {
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      margin-top: 0.5rem;
+      background: var(--copper);
+      border-radius: 50%;
+    }
+
+    .key-spec-item .spec-text {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: var(--lh-relaxed);
+    }
+
+    /* Card link for service detail */
+    .detail-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--copper);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .detail-link:hover {
+      color: var(--copper-hover);
+    }
+
+    /* Service section alternate background */
+    .service-section-alt {
+      background: var(--surface-gray);
+    }
+
+    /* Stats highlight grid */
+    .cap-highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-4);
+    }
+
+    @media (max-width: 768px) {
+      .cap-highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cap-highlights-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR — exact copy from index.html
+       ============================================================ -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Uppcba home">
+        <span class="nav-logo-text">Uppcba</span>
+      </a>
+      <div class="nav-links" id="mainNavLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="products.html" class="nav-dropdown-toggle active">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="products/smt.html">SMT Assembly</a>
+            <a href="products/dip.html">DIP Assembly</a>
+            <a href="products/mixed.html">Mixed Assembly</a>
+          </div>
+        </div>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="#inquiry-modal" class="btn nav-cta" data-modal-open="#inquiry-modal">Get Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         HERO — page-hero variant
+         ============================================================ -->
+    <section class="page-hero" aria-label="Page hero">
+      <div class="hero-inner">
+        <div class="hero-bg">
+          <!-- IMG:img-hero-products -->
+          <img
+            src="/generated/hero-products.webp"
+            alt="Solder paste extruded through stainless steel stencil onto gold-plated PCB pads, side lighting revealing paste texture"
+            data-img-role="content"
+            loading="eager">
+        </div>
+        <div class="hero-inner-content">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="separator" aria-hidden="true">/</span>
+            <span class="current">Products</span>
+          </nav>
+          <h1>PCB Assembly Services</h1>
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn-primary">Discuss Your Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICE 1: SMT Assembly — media-split, image LEFT
+         ============================================================ -->
+    <section class="section-gap-lg" aria-labelledby="smt-heading">
+      <div class="container">
+        <div class="media-split">
+          <!-- Image left -->
+          <div class="media-img">
+            <!-- IMG:img-ill-smt-line -->
+            <img
+              src="/generated/ill-smt-line.webp"
+              alt="Abstract geometric representation of an SMT production line with simplified machine shapes and copper trace-like connecting lines in isometric view"
+              class="service-detail-img"
+              data-img-role="content"
+              loading="lazy">
+          </div>
+          <!-- Body right -->
+          <div class="media-body">
+            <span class="section-eyebrow">Surface Mount</span>
+            <h3 id="smt-heading">SMT Assembly</h3>
+            <p style="color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-3);">
+              High-speed surface-mount technology for dense, miniaturized PCB designs. Our automated SMT lines handle everything from 01005 chip components to fine-pitch BGA packages with closed-loop positional feedback on every placement cycle. Ideal for high-density digital boards, IoT devices, and consumer electronics where component density and repeatability are critical.
+            </p>
+            <div class="key-specs">
+              <div class="key-spec-item">
+                <span class="spec-dot" aria-hidden="true"></span>
+                <span class="spec-text"><strong>Minimum component:</strong> 01005 (0.4 mm x 0.2 mm) chip resistors and capacitors</span>
+              </div>
+              <div class="key-spec-item">
+                <span class="spec-dot" aria-hidden="true"></span>
+                <span class="spec-text"><strong>BGA pitch:</strong> Down to 0.3 mm with X-ray verification on every joint</span>
+              </div>
+              <div class="key-spec-item">
+                <span class="spec-dot" aria-hidden="true"></span>
+                <span class="spec-text"><strong>Placement rate:</strong> Up to 75,000 CPH across 6 high-speed lines</span>
+              </div>
+              <div class="key-spec-item">
+                <span class="spec-dot" aria-hidden="true"></span>
+                <span class="spec-text"><strong>Max PCB:</strong> 510 mm x 460 mm, up to 32 layers, 3D AOI on every board</span>
+              </div>
+            </div>
+            <a href="products/smt.html" class="detail-link">View Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICE 2: DIP Assembly — media-split.reverse, image RIGHT
+         ============================================================ -->
+    <section class="section-gap-lg service-section-alt" aria-labelledby="dip-heading">
+      <div class="container">
+        <div class="media-split reverse">
+          <!-- Image right (order 1 via reverse) -->
+          <div class="media-img">
+            <!-- IMG:img-ill-dip-line -->
+            <img
+              src="/generated/ill-dip-line.webp"
+              alt="Abstract DIP through-hole assembly with vertical component leads entering board holes and stylized wave shape below in isometric line-art"
+              class="service-detail-img"
+              data-img-role="content"
+              loading="lazy">
+          </div>
+          <!-- Body left -->
+          <div class="media-body">
+            <span class="section-eyebrow">Through-Hole</span>
+            <h3 id="dip-heading">DIP Assembly</h3>
+            <p style="color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-3);">
+              Precision through-hole assembly for connectors, transformers, electrolytic capacitors, relays, and high-power components that demand mechanical strength and thermal resilience. Our wave and selective soldering lines run lead-free by default, with conformal coating available for harsh-environment applications.
+            </p>
+            <div class="key-specs">
+              <div class="key-spec-item">
+                <span class="spec-dot" aria-hidden="true"></span>
+                <span class="spec-text"><strong>Wave soldering:</strong> Lead-free process capable of handling boards up to 600 mm x 500 mm</span>
+              </div>
+              <div class="key-spec-item">
+                <span class="spec-dot" aria-hidden="true"></span>
+                <span class="spec-text"><strong>Selective soldering:</strong> Precision nozzle soldering for mixed-technology boards with SMT components on the bottom side</span>
+              </div>
+              <div class="key-spec-item">
+                <span class="spec-dot" aria-hidden="true"></span>
+                <span class="spec-text"><strong>Conformal coating:</strong> In-house acrylic, silicone, and polyurethane coating for moisture, dust, and chemical protection</span>
+              </div>
+              <div class="key-spec-item">
+                <span class="spec-dot" aria-hidden="true"></span>
+                <span class="spec-text"><strong>Inspection:</strong> AOI plus manual visual inspection per IPC-A-610 Class 3 criteria on every joint</span>
+              </div>
+            </div>
+            <a href="products/dip.html" class="detail-link">View Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICE 3: Mixed Assembly — media-split, image LEFT
+         ============================================================ -->
+    <section class="section-gap-lg" aria-labelledby="mixed-heading">
+      <div class="container">
+        <div class="media-split">
+          <!-- Image left -->
+          <div class="media-img">
+            <!-- IMG:img-ill-mixed-line -->
+            <img
+              src="/generated/ill-mixed-line.webp"
+              alt="Abstract mixed assembly showing SMT and through-hole components coexisting on a single board with two process flows merging in isometric line-art"
+              class="service-detail-img"
+              data-img-role="content"
+              loading="lazy">
+          </div>
+          <!-- Body right -->
+          <div class="media-body">
+            <span class="section-eyebrow">Hybrid Technology</span>
+            <h3 id="mixed-heading">Mixed Assembly</h3>
+            <p style="color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-3);">
+              Many real-world PCB designs require both SMT and through-hole components on the same board. Our mixed assembly service manages the full process sequence &mdash; SMT printing, placement, and reflow first, followed by through-hole insertion and selective soldering &mdash; so you do not need to split your order across multiple vendors. One board, one process, one accountable partner.
+            </p>
+            <div class="key-specs">
+              <div class="key-spec-item">
+                <span class="spec-dot" aria-hidden="true"></span>
+                <span class="spec-text"><strong>Process sequencing:</strong> SMT-first workflow with selective soldering for through-hole components, avoiding thermal damage to surface-mount parts</span>
+              </div>
+              <div class="key-spec-item">
+                <span class="spec-dot" aria-hidden="true"></span>
+                <span class="spec-text"><strong>Component coverage:</strong> Full range from 01005 SMT passives to heavy-leaded through-hole connectors and transformers</span>
+              </div>
+              <div class="key-spec-item">
+                <span class="spec-dot" aria-hidden="true"></span>
+                <span class="spec-text"><strong>Testing:</strong> Full functional test capability including boundary scan, in-circuit test, and custom test fixture development</span>
+              </div>
+              <div class="key-spec-item">
+                <span class="spec-dot" aria-hidden="true"></span>
+                <span class="spec-text"><strong>Box build:</strong> Complete electromechanical assembly, enclosure integration, cable harness, labeling, and final packaging</span>
+              </div>
+            </div>
+            <a href="products/mixed.html" class="detail-link">View Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COMPARISON TABLE — 5 rows x 4 columns
+         ============================================================ -->
+    <section class="section-gap-lg service-section-alt" aria-labelledby="comparison-heading">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-eyebrow">Compare</span>
+          <h2 class="section-title" id="comparison-heading">Service Capability Comparison</h2>
+          <p style="max-width:560px;margin-inline:auto;color:var(--text-secondary);line-height:var(--lh-relaxed);">
+            See which assembly service fits your project. Copper highlights indicate the best value in each row.
+          </p>
+        </div>
+
+        <div style="overflow-x:auto;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Capability</th>
+                <th>SMT</th>
+                <th>DIP</th>
+                <th>Mixed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1: Max PCB Size -->
+              <tr>
+                <td>Max PCB Size</td>
+                <td>510 &times; 460 mm</td>
+                <td style="background:rgba(200,127,46,0.06);color:var(--copper);font-weight:600;">600 &times; 500 mm</td>
+                <td>450 &times; 400 mm</td>
+              </tr>
+              <!-- Row 2: Min Component -->
+              <tr>
+                <td>Min Component</td>
+                <td style="background:rgba(200,127,46,0.06);color:var(--copper);font-weight:600;">01005 (0.4 &times; 0.2 mm)</td>
+                <td>2.54 mm pitch</td>
+                <td>Both (01005 SMT + 2.54 mm DIP)</td>
+              </tr>
+              <!-- Row 3: Max Layers -->
+              <tr>
+                <td>Max Layers</td>
+                <td style="background:rgba(200,127,46,0.06);color:var(--copper);font-weight:600;">32</td>
+                <td>16</td>
+                <td>24</td>
+              </tr>
+              <!-- Row 4: Lead Time (Proto) -->
+              <tr>
+                <td>Lead Time (Prototype)</td>
+                <td style="background:rgba(200,127,46,0.06);color:var(--copper);font-weight:600;">3 &ndash; 5 days</td>
+                <td>5 &ndash; 7 days</td>
+                <td>5 &ndash; 8 days</td>
+              </tr>
+              <!-- Row 5: Technology Coverage -->
+              <tr>
+                <td>Technology Coverage</td>
+                <td>SMT only</td>
+                <td>Through-hole only</td>
+                <td style="background:rgba(200,127,46,0.06);color:var(--copper);font-weight:600;">SMT + Through-Hole + Box Build</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CAPABILITY HIGHLIGHTS — 4 stat cards
+         ============================================================ -->
+    <section class="section-gap-lg" aria-labelledby="highlights-heading">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-eyebrow">Why Choose Uppcba</span>
+          <h2 class="section-title" id="highlights-heading">Engineering Capabilities</h2>
+          <p style="max-width:560px;margin-inline:auto;color:var(--text-secondary);line-height:var(--lh-relaxed);">
+            Four numbers that define what our production lines can deliver on every project.
+          </p>
+        </div>
+
+        <div class="cap-highlights-grid">
+          <div class="stat-card">
+            <div class="stat-value">01005</div>
+            <div class="stat-label">Smallest Component Supported</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">0.3mm</div>
+            <div class="stat-label">Minimum BGA Pitch</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">24h</div>
+            <div class="stat-label">Prototype Turnaround Available</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">20+</div>
+            <div class="stat-label">Years Combined Engineering Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA BANNER
+         ============================================================ -->
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band-inner">
+        <div>
+          <h3 class="cta-band-title">Not Sure Which Service You Need?</h3>
+          <p class="cta-band-lead">Our engineers can help you choose the right assembly process. Share your design files and we will recommend the optimal approach.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="contact.html" class="btn btn-primary">Talk to an Engineer</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — exact copy from index.html
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Uppcba</h4>
+          <p>
+            Precision PCB assembly for prototype through mid-volume production.
+            ISO 9001, ISO 13485, and IPC-A-610 Class 3 certified. Every board
+            assembled, inspected, and tested under one roof &mdash; no subcontracting,
+            no excuses.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="products/smt.html">SMT Assembly</a></li>
+            <li><a href="products/dip.html">DIP Assembly</a></li>
+            <li><a href="products/mixed.html">Mixed Assembly</a></li>
+            <li><a href="products.html">Box Build</a></li>
+            <li><a href="about.html">DFM Review</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>
+            Email: inquiry@uppcba.com<br>
+            Phone: +86 (755) 8xxx-xxxx<br><br>
+            Shenzhen, Guangdong<br>
+            China
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Uppcba. All rights reserved.</span>
+        <span>Built with precision.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       INQUIRY MODAL — exact copy from index.html
+       ============================================================ -->
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close inquiry form">&times;</button>
+      <h2 class="modal-title" id="modal-title">Request a Quote</h2>
+      <div class="modal-body">
+        <form action="#" method="POST" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label>
+            <input type="text" id="inq-name" name="name" class="form-input" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-email">Email <span style="color:var(--error);">*</span></label>
+            <input type="email" id="inq-email" name="email" class="form-input" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-company">Company</label>
+            <input type="text" id="inq-company" name="company" class="form-input" placeholder="Your company name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-message">Message <span style="color:var(--error);">*</span></label>
+            <textarea id="inq-message" name="message" class="form-textarea" placeholder="Briefly describe your project, quantity, and any specific requirements..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="reveal.js"></script>
+</body>
+</html>
