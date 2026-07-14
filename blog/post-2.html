@@ -442,7 +442,7 @@
       <button class="modal-close" data-modal-close aria-label="Close inquiry form">&times;</button>
       <h2 class="modal-title" id="modal-title">Request a Quote</h2>
       <div class="modal-body">
-        <form action="#" method="POST" novalidate>
+        <form onsubmit="return handleInquiry(event)" novalidate>
           <div class="form-group">
             <label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label>
             <input type="text" id="inq-name" name="name" class="form-input" placeholder="Your full name" required>
@@ -468,6 +468,7 @@
   <!-- ============================================================
        SCRIPTS
        ============================================================ -->
+  <script src="../inquiry-handler.js"></script>
   <script src="../reveal.js"></script>
 </body>
 </html>

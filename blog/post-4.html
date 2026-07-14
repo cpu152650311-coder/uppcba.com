@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCB Assembly Lead Times: 6 Factors That Affect Turnaround — Uppcba Blog</title>
+  <meta name="description" content="Understand what drives PCB assembly lead times — from component availability and stencil tooling to inspection requirements and batch size. Practical guidance for procurement managers and product teams.">
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style>
+    .article-cat-badge{display:inline-block;font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:var(--ls-eyebrow);color:var(--copper);margin-bottom:var(--sp-2)}
+    .related-heading{font-family:var(--font-display);font-weight:400;font-size:var(--text-h4);color:var(--text-primary);margin-bottom:var(--sp-4)}
+    .card-img-wrap{position:relative;overflow:hidden}
+    .card-img-wrap img{width:100%;height:200px;object-fit:cover;display:block}
+    .card-cat-pill{position:absolute;top:var(--sp-2);left:var(--sp-2);display:inline-block;padding:.25em .65em;font-size:var(--text-xs);font-weight:600;background:var(--copper);color:#fff;border-radius:var(--radius-sm);text-transform:uppercase;letter-spacing:var(--ls-label)}
+    .card-date{font-size:var(--text-xs);color:var(--text-secondary);margin-bottom:var(--sp-1)}
+    .card-excerpt{font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-2)}
+    .card-link{display:inline-flex;align-items:center;gap:.25rem;font-size:var(--text-sm);font-weight:600;color:var(--copper);text-decoration:none;transition:color var(--transition-fast)}
+    .card-link:hover{color:var(--copper-hover)}
+    .article-illustration{border-radius:var(--radius-sm);margin-block:var(--sp-5);border:1px solid var(--border-default)}
+    .cta-secondary-link-post{display:inline-flex;align-items:center;color:var(--text-on-dark);font-size:var(--text-sm);font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(232,236,242,0.4);transition:color var(--transition-fast),text-decoration-color var(--transition-fast)}
+    .cta-secondary-link-post:hover{color:var(--copper-hover);text-decoration-color:var(--copper-hover)}
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Uppcba home"><span class="nav-logo-text">Uppcba</span></a>
+      <div class="nav-links" id="mainNavLinks">
+        <a href="../index.html">Home</a><a href="../about.html">About</a>
+        <div class="nav-dropdown"><a href="../products.html" class="nav-dropdown-toggle">Products</a><div class="nav-dropdown-menu"><a href="../products/smt.html">SMT Assembly</a><a href="../products/dip.html">DIP Assembly</a><a href="../products/mixed.html">Mixed Assembly</a></div></div>
+        <a href="../blog.html" class="active">Blog</a><a href="../contact.html">Contact</a>
+      </div>
+      <a href="#inquiry-modal" class="btn nav-cta" data-modal-open="#inquiry-modal">Get Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <main>
+    <header class="article-hero">
+      <div class="container" style="max-width:780px;">
+        <img src="/generated/ill-smt-line.webp" alt="SMT assembly line with pick-and-place machine and conveyor system in operation" class="article-illustration" style="width:100%;max-width:720px;height:auto;border-radius:var(--radius-sm);margin-bottom:var(--sp-4);" data-img-role="content">
+        <span class="article-category">Procurement Guide</span>
+        <h1>PCB Assembly Lead Times: 6 Factors That Actually Affect Turnaround</h1>
+        <div class="article-meta">July 14, 2026 &middot; 7 min read</div>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>When you submit a PCB assembly order, the first question every procurement manager asks is: "When will it be ready?" The answer depends on more than just how many boards you need. Component availability, stencil fabrication, inspection requirements, and even the time of month can shift your delivery date by days or weeks. Understanding what drives those variables — and where you can influence them — turns an unpredictable timeline into a manageable schedule.</p>
+      <p>At Uppcba, we assemble boards for clients across 18 countries, from 5-piece prototypes to 5,000-unit production runs. We've seen the same lead-time patterns repeat across hundreds of projects. Here are the six factors that consistently make the difference — and what you can do about each one.</p>
+      <h2>1. Component Availability Is the Dominant Variable</h2>
+      <p>Over 60% of assembly delays trace back to one issue: components not being in stock when the production slot opens. A design calls for a specific voltage regulator that has a 12-week lead time from the manufacturer; your assembly partner discovers this only after receiving the BOM; the entire schedule slides. This is the most common, most expensive, and most preventable cause of production delay.</p>
+      <p>The fix starts before you send the BOM. For every part that is not a generic passive — resistors, capacitors below 1 µF, standard diodes — designate at least one approved alternate with verified current stock at a major distributor. Specify both the primary and alternate manufacturer part numbers on the BOM. When your assembler sees that the primary is unavailable, an experienced team will immediately pivot to the alternate rather than stopping the line and sending an email requesting direction. That email exchange — send, wait, reply, approve — costs 1 to 3 business days every time it happens, and it happens on roughly 40% of first-submission BOMs.</p>
+      <img src="/generated/ill-pick-place.webp" alt="Pick-and-place machine head placing components onto PCB with precision" class="article-illustration" data-img-role="content" loading="lazy">
+      <h2>2. Stencil Tooling: The Hidden 48-Hour Gate</h2>
+      <p>Every SMT assembly job requires a solder paste stencil — a laser-cut stainless steel foil, typically 0.1 mm to 0.15 mm thick, with apertures that match your board's pad geometry. Stencil fabrication is not instant. A standard laser-cut stencil takes 24 to 48 hours from Gerber data receipt to finished tool, longer if the design requires a step stencil for mixed fine-pitch and power-component applications.</p>
+      <p>This lead time is fixed and non-negotiable. No assembler can start placing components before the stencil is ready. Where you can influence the timeline is by submitting Gerber files that are stencil-ready — meaning pad geometries are standard, paste mask layers are included in the Gerber package, and no last-minute layout changes arrive after stencil fabrication begins. A stencil remade mid-project costs another 24 to 48 hours plus the tooling charge. Our engineering team provides a stencil design review as part of the standard DFM check before committing to production.</p>
+      <h2>3. Batch Size and Line Scheduling</h2>
+      <p>Assembly lines operate on production slots. A 5-board prototype run consumes a different slot than a 500-board production batch, and the scheduling logic is not linear. A prototype that requires 30 minutes of setup and 10 minutes of placement time might slot into a morning gap. A production run that requires 3 hours of continuous placement time needs a dedicated afternoon block. If you miss the morning slot, your boards wait until the following day.</p>
+      <p>The practical takeaway: submit orders with realistic quantities. Ordering "5 prototypes now, 500 later" is a valid strategy, but treat them as two separate production events with two separate lead-time commitments. Combining them into a single order that changes quantity mid-process is what creates scheduling chaos. And be aware that quarterly-end rushes can add 3 to 5 business days to standard lead times across the industry.</p>
+      <img src="/generated/ill-reflow.webp" alt="PCB passing through reflow oven with solder melting and components bonding" class="article-illustration" data-img-role="content" loading="lazy">
+      <h2>4. Inspection Requirements: AOI, X-Ray, and Functional Test</h2>
+      <p>Not all inspection is created equal. AOI adds approximately 2 to 5 minutes per board and is performed inline — it does not typically extend the overall lead time. X-ray inspection for BGA and QFN packages, however, is a batch process performed on a separate station. A run of 200 boards with BGA inspection adds 3 to 4 hours of dedicated X-ray time, which may need to be scheduled outside of peak line hours.</p>
+      <p>Functional test requires a custom test fixture and a test program. Fixture fabrication alone takes 3 to 5 business days if it does not already exist. If you are ordering a first-run prototype without an existing test fixture, factor that lead time into your schedule explicitly. Our team can design and build a test fixture concurrently with stencil fabrication, provided we receive the test specification at the same time as the Gerber data.</p>
+      <p>Specify your inspection requirements clearly on the assembly drawing. Vague instructions like "test to ensure functionality" generate clarification emails and schedule delays. "Verify output voltage 5.0 V ± 0.1 V under 2 A load at test points TP1 and TP2, record value per serial number" is an instruction that the line can execute immediately.</p>
+      <img src="/generated/ill-aoi.webp" alt="Automated Optical Inspection camera system scanning an assembled PCB" class="article-illustration" data-img-role="content" loading="lazy">
+      <h2>5. Mixed-Technology Boards: The Through-Hole Factor</h2>
+      <p>A pure SMT board moves through a single automated process: paste print, place, reflow, AOI. A mixed-technology board requires a second process step: wave soldering or selective soldering for the through-hole parts, performed after the SMT reflow cycle is complete.</p>
+      <p>Wave soldering adds roughly 30 to 60 minutes of additional process time per batch, plus fixture loading time. Selective soldering is slower per board but eliminates fixture setup time. Fewer than 10 through-hole components per board: selective soldering is faster overall because it skips fixturing. More than 20: wave soldering wins on throughput.</p>
+      <p>The lead-time impact of mixed technology is largely fixed — you cannot eliminate the second process step. What you can control is fixture readiness. Uppcba maintains an in-house fixture workshop that can turn around a standard wave pallet in 48 hours, provided we have the board outline data.</p>
+      <h2>6. Documentation Completeness: The Paperwork Tax</h2>
+      <p>An assembly order is not complete when you send the Gerber files. It is complete when the assembler has Gerber data, BOM with approved alternates, CPL file with coordinates and rotations, an assembly drawing, any test specification, and — if applicable — a conformal coating mask drawing. Missing any one of these triggers a request-for-information cycle that adds 1 to 3 days per missing item.</p>
+      <p>The most commonly missing items are the CPL file and the assembly drawing. A CPL file that uses a different board origin than the Gerber data is functionally the same as no CPL file. Verify that your ECAD tool exports the CPL in the same coordinate system as your Gerber output. This single check eliminates roughly 15% of all production delays we encounter.</p>
+      <h2>Realistic Lead Time Benchmarks</h2>
+      <p>Based on our production data across 500+ projects, here is what you can expect for standard PCB assembly turnaround under normal conditions — all components in stock, documentation complete, no fixture fabrication required:</p>
+      <table class="dfm-checklist">
+        <thead><tr><th>Project Type</th><th>Typical Turnaround</th></tr></thead>
+        <tbody>
+          <tr><td>Prototype (5–20 boards, SMT only)</td><td>3–5 business days</td></tr>
+          <tr><td>Prototype (5–20 boards, mixed technology)</td><td>5–7 business days</td></tr>
+          <tr><td>Low-volume production (100–500 boards, SMT only)</td><td>7–10 business days</td></tr>
+          <tr><td>Low-volume production (100–500 boards, mixed tech)</td><td>10–14 business days</td></tr>
+          <tr><td>Mid-volume production (500–5,000 boards)</td><td>14–21 business days</td></tr>
+          <tr><td>With functional test fixture fabrication</td><td>Add 3–5 business days</td></tr>
+          <tr><td>With wave solder fixture fabrication</td><td>Add 2 business days</td></tr>
+        </tbody>
+      </table>
+      <h2>Conclusion: Lead Time Is a Design Variable, Not a Given</h2>
+      <p>The single most effective way to compress your PCB assembly lead time is to submit a complete package on the first try. Gerber data, BOM with alternates, CPL with verified coordinates, assembly drawing with orientation notes, and inspection requirements stated explicitly. When that package arrives at Uppcba, our engineers can begin stencil fabrication and component kitting on the same day.</p>
+      <p>If you plan to move into production within the next quarter, submit your design for a free DFM review now. Our engineering team will identify every lead-time variable in your specific design before you commit to a production schedule. That review costs nothing and can compress your final delivery date by days or weeks.</p>
+    </div>
+    <section class="section-gap-md" style="background:var(--surface-gray);" aria-labelledby="related-heading">
+      <div class="container"><h2 class="related-heading" id="related-heading">Related Articles</h2>
+        <div class="grid-2">
+          <article class="blog-card"><div class="card-img-wrap"><img src="/generated/blog-dfm-cover.webp" alt="PCB trace routing pattern representing DFM optimization" data-img-role="content" loading="lazy"><span class="card-cat-pill">Design for Manufacturing</span></div><div class="blog-card-body"><p class="card-date">June 15, 2026</p><h3 class="blog-card-title">Design for Manufacturability: Preparing Your PCB for SMT Assembly</h3><p class="card-excerpt">DFM principles to reduce production cost and improve yield. Panelization, component placement, stencil design, and BOM best practices.</p><a href="post-1.html" class="card-link">Read More &rarr;</a></div></article>
+          <article class="blog-card"><div class="card-img-wrap"><img src="/generated/blog-rework-cover.webp" alt="Magnifying glass over solder joint" data-img-role="content" loading="lazy"><span class="card-cat-pill">Industry Trends</span></div><div class="blog-card-body"><p class="card-date">May 28, 2026</p><h3 class="blog-card-title">The Cost of Rework: Why Quality Inspection Matters in PCB Assembly</h3><p class="card-excerpt">Defects caught late cost exponentially more to fix. The economics of inspection across the assembly lifecycle.</p><a href="post-3.html" class="card-link">Read More &rarr;</a></div></article>
+        </div></div>
+    </section>
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band-inner">
+        <div><h2 class="cta-band-title">Need a lead-time estimate for your project?</h2><p class="cta-band-lead">Submit your design files for a free DFM review with turnaround estimate. Our engineers respond with a detailed production schedule within 24 hours.</p></div>
+        <div class="cta-band-actions" style="align-items:center;"><a href="#inquiry-modal" class="btn btn-primary" data-modal-open="#inquiry-modal">Submit Your Design</a><a href="../contact.html" class="cta-secondary-link-post">Contact Engineering</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container"><div class="footer-grid">
+      <div class="footer-col"><h4>Uppcba</h4><p>Precision PCB assembly for prototype through mid-volume production. ISO 9001, ISO 13485, and IPC-A-610 Class 3 certified.</p></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li><li><a href="../products.html">Products</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="../products/smt.html">SMT Assembly</a></li><li><a href="../products/dip.html">DIP Assembly</a></li><li><a href="../products/mixed.html">Mixed Assembly</a></li><li><a href="../products.html">Box Build</a></li><li><a href="../about.html">DFM Review</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><p>Email: inquiry@uppcba.com<br>Phone: +86 (755) 8xxx-xxxx<br><br>Shenzhen, Guangdong<br>China</p></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Uppcba. All rights reserved.</span><span>Built with precision.</span></div></div>
+  </footer>
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close inquiry form">&times;</button>
+      <h2 class="modal-title" id="modal-title">Request a Quote</h2>
+      <div class="modal-body">
+        <form onsubmit="return handleInquiry(event)" novalidate>
+          <div class="form-group"><label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label><input type="text" id="inq-name" name="name" class="form-input" placeholder="Your full name" required></div>
+          <div class="form-group"><label class="form-label" for="inq-email">Email <span style="color:var(--error);">*</span></label><input type="email" id="inq-email" name="email" class="form-input" placeholder="you@company.com" required></div>
+          <div class="form-group"><label class="form-label" for="inq-company">Company</label><input type="text" id="inq-company" name="company" class="form-input" placeholder="Your company name"></div>
+          <div class="form-group"><label class="form-label" for="inq-message">Message <span style="color:var(--error);">*</span></label><textarea id="inq-message" name="message" class="form-textarea" placeholder="Briefly describe your project, quantity, and any specific requirements..." required></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="../inquiry-handler.js"></script>
+  <script src="../reveal.js"></script>
+</body>
+</html>
