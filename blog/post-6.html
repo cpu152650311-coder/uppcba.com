@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turnkey vs Consigned PCB Assembly: Which Model Reduces Your Total Cost — Uppcba Blog</title>
+  <meta name="description" content="Turnkey or consigned PCB assembly? A detailed comparison of cost structure, supply chain risk, quality accountability, and component sourcing — with a practical decision framework for procurement managers.">
+  <link rel="canonical" href="https://uppcba.com/blog/post-6.html">
+  <meta property="og:title" content="Turnkey vs Consigned PCB Assembly: Which Model Reduces Your Total Cost — Uppcba Blog">
+  <meta property="og:description" content="Turnkey or consigned PCB assembly? A detailed comparison of cost structure, supply chain risk, quality accountability, and component sourcing.">
+  <meta property="og:image" content="https://uppcba.com/generated/blog-turnkey-cover.webp">
+  <meta property="og:url" content="https://uppcba.com/blog/post-6.html">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style>
+    .article-cat-badge{display:inline-block;font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:var(--ls-eyebrow);color:var(--copper);margin-bottom:var(--sp-2)}
+    .related-heading{font-family:var(--font-display);font-weight:400;font-size:var(--text-h4);color:var(--text-primary);margin-bottom:var(--sp-4)}
+    .card-img-wrap{position:relative;overflow:hidden}
+    .card-img-wrap img{width:100%;height:200px;object-fit:cover;display:block}
+    .card-cat-pill{position:absolute;top:var(--sp-2);left:var(--sp-2);display:inline-block;padding:.25em .65em;font-size:var(--text-xs);font-weight:600;background:var(--copper);color:#fff;border-radius:var(--radius-sm);text-transform:uppercase;letter-spacing:var(--ls-label)}
+    .card-date{font-size:var(--text-xs);color:var(--text-secondary);margin-bottom:var(--sp-1)}
+    .card-excerpt{font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-2)}
+    .card-link{display:inline-flex;align-items:center;gap:.25rem;font-size:var(--text-sm);font-weight:600;color:var(--copper);text-decoration:none;transition:color var(--transition-fast)}
+    .card-link:hover{color:var(--copper-hover)}
+    .article-illustration{border-radius:var(--radius-sm);margin-block:var(--sp-5);border:1px solid var(--border-default)}
+    .cta-secondary-link-post{display:inline-flex;align-items:center;color:var(--text-on-dark);font-size:var(--text-sm);font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(232,236,242,0.4);transition:color var(--transition-fast),text-decoration-color var(--transition-fast)}
+    .cta-secondary-link-post:hover{color:var(--copper-hover);text-decoration-color:var(--copper-hover)}
+    .compare-table{width:100%;border-collapse:collapse;margin-block:var(--sp-4);font-size:var(--text-sm)}
+    .compare-table th{text-align:left;padding:var(--sp-2) var(--sp-3);background:var(--copper-light);color:var(--text-primary);font-weight:600;border-bottom:2px solid var(--copper)}
+    .compare-table td{padding:var(--sp-2) var(--sp-3);border-bottom:1px solid var(--border-default);color:var(--text-secondary);line-height:var(--lh-relaxed)}
+    .decision-box{background:var(--copper-light);border-left:4px solid var(--copper);padding:var(--sp-4);border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-block:var(--sp-5)}
+    .decision-box h3{font-family:var(--font-display);font-weight:400;color:var(--text-primary);margin-bottom:var(--sp-2)}
+    .decision-box p{color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:0}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Turnkey vs Consigned PCB Assembly: Which Model Reduces Your Total Cost",
+    "description": "A detailed comparison of turnkey and consigned PCB assembly models covering cost structure, supply chain risk, quality accountability, and component sourcing — with a practical decision framework.",
+    "image": "https://uppcba.com/generated/blog-turnkey-cover.webp",
+    "datePublished": "2026-07-16",
+    "author": {"@type": "Organization", "name": "Uppcba"}
+  }
+  </script>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Uppcba home"><span class="nav-logo-text">Uppcba</span></a>
+      <div class="nav-links" id="mainNavLinks">
+        <a href="../index.html">Home</a><a href="../about.html">About</a>
+        <div class="nav-dropdown"><a href="../products.html" class="nav-dropdown-toggle">Products</a><div class="nav-dropdown-menu"><a href="../products/smt.html">SMT Assembly</a><a href="../products/dip.html">DIP Assembly</a><a href="../products/mixed.html">Mixed Assembly</a></div></div>
+        <a href="../blog.html" class="active">Blog</a><a href="../contact.html">Contact</a>
+      </div>
+      <a href="#inquiry-modal" class="btn nav-cta" data-modal-open="#inquiry-modal">Get Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <main>
+    <header class="article-hero">
+      <div class="container" style="max-width:780px;">
+        <img src="/generated/blog-turnkey-cover.webp" alt="Abstract illustration showing two PCB assembly supply chain paths — one fully managed and one component-split — rendered in navy and copper industrial tones" class="article-illustration" style="width:100%;max-width:720px;height:auto;border-radius:var(--radius-sm);margin-bottom:var(--sp-4);" data-img-role="content">
+        <span class="article-category">Procurement Strategy</span>
+        <h1>Turnkey vs Consigned PCB Assembly: Which Model Reduces Your Total Cost</h1>
+        <div class="article-meta">July 16, 2026 &middot; 9 min read</div>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>Every procurement manager sourcing PCB assembly from China faces a structural decision before the first quote is even requested: turnkey or consigned? The choice shapes your cost structure, supply chain complexity, quality accountability, and cash flow. And the answer is rarely as simple as "turnkey costs more but saves time."</p>
+      <p>At Uppcba, roughly 70% of our assembly projects for international clients run on a turnkey basis, and 30% are consigned. But that split isn't random — it follows a clear pattern based on product lifecycle stage, component complexity, and in-house procurement capability. This guide breaks down the real cost drivers, risk factors, and decision criteria our clients use to choose between the two models.</p>
+
+      <h2>What Turnkey PCB Assembly Actually Includes</h2>
+      <p>In a turnkey arrangement, the assembly partner handles everything from component procurement to final inspection. You deliver a BOM (bill of materials), Gerber files, and assembly drawings. The assembly house sources all components — passives, ICs, connectors, PCBs — through its own supply chain, manages incoming inspection, assembles the boards, and ships finished product.</p>
+      <p>The scope is broader than many first-time buyers realize. At Uppcba, turnkey includes: BOM validation against authorized distributor databases (Digi-Key, Mouser, Arrow, LCSC for passives), component-level incoming inspection including X-ray for high-value ICs, full traceability from reel to board position, and a single point of accountability — if anything is wrong with the finished board, it's our problem to fix. There is no finger-pointing between component supplier and assembler because both are under one contract.</p>
+      <p>This single-accountability structure is the primary reason clients choose turnkey. When an assembled board fails functional test, you make one phone call. In a consigned model, that same failure triggers a multi-party investigation: was the component defective on arrival, or was it damaged during assembly? Each party has an incentive to point at the other, and the procurement manager spends days mediating instead of solving the problem.</p>
+
+      <img src="/generated/blog-turnkey-flow.webp" alt="Diagram showing turnkey PCB assembly workflow from BOM submission through component sourcing, assembly, inspection, and final shipment" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <h2>What Consigned Assembly Means in Practice</h2>
+      <p>Consigned assembly flips the procurement responsibility to you. You source all components — either from your own inventory or by purchasing directly from distributors — and ship a complete kit to the assembly house. The assembler's scope is limited to manufacturing: paste printing, pick-and-place, reflow or wave soldering, inspection, and testing. Component quality and availability are your responsibility.</p>
+      <p>Consigned makes sense in two scenarios. The first is when you already hold component inventory — perhaps you're a product company with an established supply chain and buying power that exceeds what a mid-size assembly house can command. If you're purchasing 500,000 units of a specific MCU annually and allocating 5,000 to a single assembly batch, your per-unit cost on that MCU is likely 15–25% lower than what the assembly house would pay at their volume tier. That spread can offset the assembly house's turnkey markup.</p>
+      <p>The second scenario is proprietary or allocation-constrained components. If your design uses a custom ASIC, a military-grade connector with export controls, or an IC that's on 52-week allocation from the manufacturer, the assembly house cannot source it — no matter how good their supply chain is. These components must be consigned by definition.</p>
+      <p>However, consigned assembly shifts several hidden costs to your side of the ledger. Excess component waste from pick-and-place attrition (typically 0.5–1.5% for chip components, higher for fine-pitch ICs), incoming inspection labor at your facility, international shipping and customs brokerage for component kits, and the working capital tied up in component inventory — all of these land on your P&amp;L. When clients model only the assembly house's quoted labor rate, they routinely underestimate total consigned cost by 18–30%. For context on where those hidden costs surface, see our analysis of <a href="../blog/post-3.html">how quality gaps drive rework costs</a> in PCB assembly.</p>
+
+      <h2>Cost Comparison: What the Assembly Quote Doesn't Show</h2>
+      <p>Comparing turnkey and consigned purely on the assembly quote is misleading. A turnkey quote bundles component cost plus assembly labor into one line item. A consigned quote shows only assembly labor. To make an apples-to-apples comparison, you need to model the total landed cost including components, logistics, waste, and quality failure cost.</p>
+
+      <table class="compare-table">
+        <thead><tr><th>Cost Factor</th><th>Turnkey</th><th>Consigned</th></tr></thead>
+        <tbody>
+          <tr><td>Component unit cost</td><td>Assembly house pricing (+8–15% markup vs. your direct pricing at equal volume)</td><td>Your direct distributor pricing (lower per unit at high volume)</td></tr>
+          <tr><td>Component waste allowance</td><td>Included — assembler bears attrition risk</td><td>You provide 1–3% overage; excess waste is your loss</td></tr>
+          <tr><td>Incoming inspection</td><td>Performed by assembler, included in unit price</td><td>You inspect before kitting, or pay assembler as added service</td></tr>
+          <tr><td>Component logistics</td><td>Assembler manages — consolidated shipping</td><td>You ship component kits internationally; 2× freight cost</td></tr>
+          <tr><td>Inventory carrying cost</td><td>On assembler's balance sheet</td><td>On your balance sheet (working capital + storage)</td></tr>
+          <tr><td>Defect liability</td><td>Single point — assembler owns the problem</td><td>Split — must prove whether defect is component or assembly</td></tr>
+        </tbody>
+      </table>
+
+      <p>For a typical mid-complexity board with 120 components and a 500-unit production run, the turnkey premium over consigned component cost is roughly $1.80–2.50 per board at Uppcba's volumes. But when you add the hidden consigned costs — inbound inspection labor, component overage waste, dual freight (components in + finished boards out), and the working capital tied up in 4–6 weeks of component inventory — the effective cost gap narrows to under $0.80 per board. For most clients, that's less than the value of a single hour of procurement manager time spent mediating a quality dispute.</p>
+
+      <img src="/generated/blog-turnkey-cost.webp" alt="Bar chart comparing total landed cost breakdown of turnkey versus consigned PCB assembly for a 500-unit production run" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <h2>Supply Chain Risk: Why Shenzhen Location Matters for Turnkey</h2>
+      <p>Component sourcing risk is the factor that most heavily tilts the decision toward turnkey — and it's a risk that's invisible until it hits you. The global semiconductor supply chain has experienced allocation events in 2020–2022 (pandemic-driven), 2023 (automotive demand surge), and 2024–2025 (AI-driven advanced packaging capacity drain). Each cycle, procurement managers who relied on consigned sourcing discovered that their authorized distributor relationships meant nothing when the distributor had zero stock and a 40-week lead time.</p>
+      <p>Assembly houses in Shenzhen have a structural advantage in these situations: access to the Huaqiangbei component market, the largest electronics components trading hub in the world. When an STM32 MCU shows zero stock at Digi-Key and Mouser, a Shenzhen-based assembly partner can often source verified, tracer-authenticated stock through secondary channels within 48 hours. This is not the gray market of counterfeits — it's excess inventory from OEM production runs, broker-held allocation stock, and authorized distributor overstock, all verified through incoming X-ray inspection and decapsulation when appropriate.</p>
+      <p>Uppcba maintains relationships with 40+ authorized distributors and 15+ verified secondary-market partners, and every IC above $5.00 unit cost goes through at minimum visual inspection under 40× magnification plus X-ray comparison against a known-good reference image. In 2025, our incoming inspection caught 23 counterfeit or remarked ICs across approximately 18,000 inspected units — a 0.13% catch rate that would have caused field failures if those parts had reached assembly. For a consigned client sourcing independently without this verification infrastructure, those 23 parts would be assembled, tested (possibly passing initial functional test), shipped, and failing in the field 6–12 months later. The same inspection rigor applies regardless of <a href="../blog/post-5.html">which assembly process — SMT, through-hole, or mixed</a> — your board requires.</p>
+
+      <img src="/generated/blog-turnkey-inspection.webp" alt="Industrial close-up showing component inspection station with microscope and X-ray comparison imagery, navy and copper accent tones" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <h2>Quality Accountability: Who Pays When Something Goes Wrong</h2>
+      <p>The quality accountability structure is perhaps the most undervalued factor in the turnkey-vs-consigned decision. Under turnkey, if a finished board fails functional test, the assembly house cannot argue that the component was defective — because they procured it. The root cause investigation (RCA) is straightforward: was it an assembly defect (solder bridge, tombstoning, insufficient wetting) or a component defect (counterfeit, ESD damage, out-of-spec)? Either way, the assembly house owns the corrective action.</p>
+      <p>Under consigned, a functional test failure triggers a much messier RCA. The assembly house examines the board and says: "The solder joint met <a href="../blog/post-2.html">IPC-A-610 Class 3 criteria</a> — the component failed." The component was shipped by you from inventory. Now you need to determine whether the component was defective on arrival from the distributor (warranty claim), damaged during your handling and kitting (your liability), or damaged during assembly (assembler liability). Each investigation takes 3–5 business days minimum, involves back-and-forth emails with microscopy images and test data, and often ends in a negotiated split of rework cost rather than clear accountability.</p>
+      <p>Our clients who run mixed-model programs — consigned for proprietary ICs, turnkey for everything else — report that quality disputes on consigned-line boards consume roughly 4× the engineering and procurement time of equivalent turnkey-line boards. For a program running 500 boards per month with a 2% functional test failure rate, that's 10 boards per month triggering investigations. At 4 hours of procurement/engineering time per investigation, the consigned model adds roughly 40 hours per month of dispute-resolution overhead. Valued at a procurement manager's fully loaded cost of $75/hour, that's $3,000/month in hidden quality-management cost.</p>
+
+      <img src="/generated/blog-turnkey-quality.webp" alt="Split comparison showing turnkey single-accountability structure versus consigned multi-party quality dispute flow" class="article-illustration" data-img-role="content" loading="lazy">
+
+      <h2>When to Choose Each Model: A Decision Framework</h2>
+      <p>After processing over 200 international client programs at Uppcba, clear patterns emerge for when each model makes financial and operational sense. The decision rarely comes down to cost alone — it's a function of product lifecycle stage, component profile, and your internal procurement capability.</p>
+
+      <div class="decision-box">
+        <h3>Choose Turnkey When:</h3>
+        <p>Your production volume is below 5,000 units per year (component buying power insufficient to beat assembly house pricing). Your BOM includes 80+ line items — the procurement labor to manage that many SKUs internally exceeds the turnkey markup. You're in prototype or NPI phase and need <a href="../blog/post-4.html">fast-turn assembly</a> without the 4–6 week component lead-time bottleneck. Your design uses commodity ICs (STM32, ESP32, TI power management) where Shenzhen secondary-market access provides supply assurance. You don't have an in-house component engineering team to manage incoming inspection and counterfeit detection.</p>
+      </div>
+
+      <div class="decision-box">
+        <h3>Choose Consigned When:</h3>
+        <p>You're running production volumes above 10,000 units per year and your component buying power generates savings that exceed the turnkey markup by 15% or more. Your BOM is dominated by 3–5 high-value custom or proprietary components (ASICs, FPGAs, custom connectors) that the assembly house cannot source regardless. You already hold component inventory from a previous production run or canceled project. You have an established supplier quality engineering (SQE) function that can manage incoming inspection and component traceability independently.</p>
+      </div>
+
+      <div class="decision-box">
+        <h3>Choose a Hybrid When:</h3>
+        <p>Your BOM mixes commodity passives and standard ICs (turnkey — let the assembler handle it) with a few proprietary or allocation-constrained components (consigned — you provide these). This model captures roughly 80% of the turnkey convenience benefit while preserving your cost advantage on the high-value items. At Uppcba, hybrid programs account for about 20% of our volume and consistently deliver the best client satisfaction scores — because clients get the operational ease of turnkey for the tedious procurement work while retaining control over the components that matter strategically.</p>
+      </div>
+
+      <h2>The Five Questions That Determine Your Model</h2>
+      <p>Before you send your next RFQ, answer these five questions. If you answer "no" to three or more, turnkey is almost certainly your lower-total-cost option — regardless of what the consigned assembly labor quote says.</p>
+      <p><strong>1. Do you have component buying power at volumes above 10,000 units/year?</strong> If not, the assembly house's aggregated buying across multiple clients typically prices below your direct distributor quote. Our passives purchasing at Uppcba aggregates demand from 50+ active client programs, giving us pricing tiers that individual clients at 500–5,000 unit volumes cannot access.</p>
+      <p><strong>2. Do you have an in-house incoming inspection capability?</strong> This means a microscope station, a component engineer who can identify remarked or counterfeit ICs, and a process for handling component-level RMAs. Without this, you're effectively outsourcing quality control to your assembly partner anyway — you're just not paying for it in the quote, and you'll pay for it in field failures instead.</p>
+      <p><strong>3. Is your BOM under 50 line items?</strong> Every line item adds procurement touchpoints: RFQ, order placement, order tracking, incoming inspection, kitting. Below 50 items, a single procurement specialist can manage consigned sourcing. Above 80 items, you're looking at a full-time procurement FTE whose salary alone exceeds the turnkey markup on a typical program. For reference, Uppcba's average client BOM has 120 line items — the procurement complexity alone is why 70% of our clients choose turnkey.</p>
+      <p><strong>4. Can you tolerate a 4-week component lead-time buffer?</strong> Consigned assembly means you order components, receive them, inspect them, kit them, and ship them to the assembly house — then the assembly clock starts. Turnkey compresses this: component ordering happens in parallel with stencil fabrication and line scheduling. For prototype and NPI programs where <a href="../blog/post-4.html">lead time is the primary constraint</a>, turnkey typically delivers finished boards 2–3 weeks faster.</p>
+      <p><strong>5. Can your balance sheet carry 6–8 weeks of component inventory?</strong> Consigned procurement ties up working capital in components from the moment you place the purchase order until the finished boards are shipped and invoiced. For a $50 BOM at 1,000 units, that's $50,000 in component inventory sitting on your books for potentially two months. Turnkey shifts that working capital burden to the assembly house's balance sheet — you pay for finished boards, not components in process.</p>
+
+      <h2>How to Run a Fair Cost Comparison</h2>
+      <p>If you're evaluating both models for an upcoming program, here's how to build a comparison that captures the real total cost, not just the quoted assembly rate. First, make sure your design is production-ready — our <a href="../blog/post-1.html">DFM preparation guide</a> covers the design-level decisions that affect assembly cost regardless of procurement model. Then request a turnkey quote with the full BOM. Separately, price the same BOM at your direct distributor channels (Digi-Key, Mouser, Arrow, or your established supplier relationships). Then add these consigned-model costs that won't appear in any quote:</p>
+      <p>Component overage: 1.5% of BOM cost for passives, 0.5% for ICs. Incoming inspection: $0.15–0.30 per line item for visual and basic electrical verification (if outsourced). Component freight: international shipping of component kits plus customs brokerage — typically $300–800 per shipment depending on weight and origin. Quality dispute labor: budget 2–4 hours per incident at your internal hourly cost. Working capital cost: component inventory value × your cost of capital × (lead time in months / 12).</p>
+      <p>When Uppcba clients run this full-cost comparison for programs under 5,000 units per year, turnkey comes out ahead roughly 80% of the time — not because turnkey is subsidized, but because the hidden costs of consigned procurement are real and substantial. The key insight is that <a href="../blog/post-3.html">assembly cost is only one piece of total cost</a>, and procurement managers who optimize for the assembly quote alone consistently make the more expensive choice.</p>
+    </div>
+
+    <section class="cta-band" aria-label="Call to action">
+      <div class="cta-band-inner">
+        <div><h2 class="cta-band-title">Not sure which model fits your program?</h2><p class="cta-band-lead">Send us your BOM and target volume. We'll return a turnkey quote and a consigned assembly quote side by side — so you can compare total cost with real numbers, not estimates.</p></div>
+        <div class="cta-band-actions" style="align-items:center;"><a href="#inquiry-modal" class="btn btn-primary" data-modal-open="#inquiry-modal">Get a Side-by-Side Quote</a><a href="../contact.html" class="cta-secondary-link-post">Contact Procurement Support</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container"><div class="footer-grid">
+      <div class="footer-col"><h4>Uppcba</h4><p>Precision PCB assembly for prototype through mid-volume production. ISO 9001, ISO 13485, and IPC-A-610 Class 3 certified.</p></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li><li><a href="../products.html">Products</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="../products/smt.html">SMT Assembly</a></li><li><a href="../products/dip.html">DIP Assembly</a></li><li><a href="../products/mixed.html">Mixed Assembly</a></li><li><a href="../products.html">Box Build</a></li><li><a href="../about.html">DFM Review</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><p>Email: inquiry@uppcba.com<br>Phone: +86 (755) 8xxx-xxxx<br><br>Shenzhen, Guangdong<br>China</p></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Uppcba. All rights reserved.</span><span>Built with precision.</span></div></div>
+  </footer>
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close inquiry form">&times;</button>
+      <h2 class="modal-title" id="modal-title">Request a Quote</h2>
+      <div class="modal-body">
+        <form onsubmit="return handleInquiry(event)" novalidate>
+          <div class="form-group"><label class="form-label" for="inq-name">Name <span style="color:var(--error);">*</span></label><input type="text" id="inq-name" name="name" class="form-input" placeholder="Your full name" required></div>
+          <div class="form-group"><label class="form-label" for="inq-email">Email <span style="color:var(--error);">*</span></label><input type="email" id="inq-email" name="email" class="form-input" placeholder="you@company.com" required></div>
+          <div class="form-group"><label class="form-label" for="inq-company">Company</label><input type="text" id="inq-company" name="company" class="form-input" placeholder="Your company name"></div>
+          <div class="form-group"><label class="form-label" for="inq-message">Message <span style="color:var(--error);">*</span></label><textarea id="inq-message" name="message" class="form-textarea" placeholder="Briefly describe your project, quantity, and any specific requirements..." required></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="../inquiry-handler.js"></script>
+  <script src="../reveal.js"></script>
+</body>
+</html>
